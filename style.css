@@ -1,0 +1,65 @@
+:root {
+  --bg: #f4f5f8;
+  --surface: #ffffff;
+  --text: #16181d;
+  --muted: #5b6270;
+  --brand: #0b1f4d;
+  --link: #1f4fbf;
+  --line: #dfe3ea;
+  --fill: #fff1b8;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0e1116;
+    --surface: #171b22;
+    --text: #e8eaee;
+    --muted: #a0a7b4;
+    --brand: #0b1f4d;
+    --link: #8fb0ff;
+    --line: #2a303b;
+    --fill: #5a4a00;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+.bar {
+  background: var(--brand);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 16px;
+}
+.brand { display: flex; align-items: center; gap: 10px; color: #fff; text-decoration: none; font-weight: 700; font-size: 20px; }
+.brand img { border-radius: 8px; }
+nav { display: flex; gap: 16px; }
+nav a { color: #cdd6ee; text-decoration: none; font-weight: 600; }
+nav a[aria-current="page"] { color: #fff; }
+main {
+  max-width: 760px;
+  margin: 24px auto;
+  padding: 24px 16px 32px;
+  background: var(--surface);
+  border-radius: 16px;
+}
+@media (min-width: 800px) { main { padding: 40px 48px; margin: 40px auto; } }
+h1 { font-size: 32px; line-height: 1.2; margin: 0 0 4px; }
+h2 { font-size: 22px; margin: 36px 0 8px; }
+h3 { font-size: 17px; margin: 20px 0 4px; }
+.meta { color: var(--muted); margin: 0 0 20px; }
+.lead { font-size: 19px; }
+a { color: var(--link); }
+ul { padding-left: 22px; }
+li { margin: 4px 0; }
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 15px; }
+th, td { text-align: left; vertical-align: top; padding: 10px 8px; border-bottom: 1px solid var(--line); }
+th { color: var(--muted); font-weight: 600; }
+.fill { background: var(--fill); padding: 0 4px; border-radius: 4px; }
+footer { max-width: 760px; margin: 0 auto 40px; padding: 0 16px; color: var(--muted); font-size: 14px; text-align: center; }
