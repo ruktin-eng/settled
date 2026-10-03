@@ -8,6 +8,7 @@
 <title>Tinashe Rukasha – Portfolio</title>
 <meta name="description" content="Tinashe Rukasha: NHS clinical pharmacist and aspiring commercial solicitor in life sciences, app builder and host of the Commercial Synopsis podcast.">
 <link rel="icon" href="https://ruktin-eng.github.io/settled/icon.png">
+<script>document.documentElement.classList.add("js");</script>
 <style>
 :root {
   --page: #eef1f5;
@@ -330,7 +331,31 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
   .menubar nav a { padding: 4px 8px; font-size: 12px; }
   h2 { font-size: 23px; }
 }
+/* ---------- Scroll transitions ---------- */
+/* Windows "open" like XP; monogram images wipe in with a slow zoom and the letters slide into place. */
+.js .reveal { opacity: 0; transform: translateY(28px) scale(.96); transform-origin: 50% 0; }
+.js .reveal.in {
+  opacity: 1; transform: none;
+  transition: opacity .55s ease-out, transform .65s cubic-bezier(.2,.9,.25,1.15);
+  transition-delay: var(--delay, 0s);
+}
+.js .reveal .mark { clip-path: inset(0 100% 0 0 round 14px); }
+.js .reveal.in .mark { clip-path: inset(0 0 0 0 round 14px); transition: clip-path .9s cubic-bezier(.65,0,.35,1) calc(var(--delay, 0s) + .15s); }
+.js .reveal .mark .tile { transform: scale(1.25); }
+.js .reveal.in .mark .tile { transform: scale(1); transition: transform 2.4s cubic-bezier(.2,.7,.2,1) calc(var(--delay, 0s) + .2s); }
+.js .reveal .mark .l1 { transform: translateX(-30cqw); opacity: 0; }
+.js .reveal .mark .l2 { transform: translateX(30cqw); opacity: 0; }
+.js .reveal.in .mark .l1, .js .reveal.in .mark .l2 {
+  transform: none; opacity: 1;
+  transition: transform .8s cubic-bezier(.2,.9,.25,1.1) calc(var(--delay, 0s) + .45s), opacity .5s calc(var(--delay, 0s) + .45s);
+}
+.js h2.reveal { transform: translateX(-24px); }
+.js h2.reveal.in { transform: none; }
+
 @media (prefers-reduced-motion: reduce) {
+  .js .reveal, .js .reveal .mark, .js .reveal .mark .tile, .js .reveal .mark .l1, .js .reveal .mark .l2 {
+    opacity: 1 !important; transform: none !important; clip-path: none !important; transition: none !important;
+  }
   .progress .bar::before { animation: none; }
   .card, .btn { transition: none; }
 }
@@ -663,6 +688,25 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
 </footer>
 
 <script>
+// Scroll transitions: reveal windows and headings as they enter the viewport.
+(function () {
+  var els = document.querySelectorAll("main .win, main h2");
+  els.forEach(function (el) {
+    el.classList.add("reveal");
+    // Stagger siblings in the same row (project cards, strength boxes, side-by-side windows).
+    var sibs = Array.prototype.filter.call(el.parentElement.children, function (c) { return c.matches(".win"); });
+    var i = sibs.indexOf(el);
+    if (i > 0) el.style.setProperty("--delay", (i * 0.12) + "s");
+  });
+  if (!("IntersectionObserver" in window)) { els.forEach(function (el) { el.classList.add("in"); }); return; }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
+  els.forEach(function (el) { io.observe(el); });
+})();
+
 // Quick play: plays the latest episode right here on the page by driving
 // the Spotify embed through Spotify's iFrame API.
 (function () {
