@@ -13,7 +13,15 @@
 <header class="bar"><a href="index.html" class="brand"><img src="icon.png" alt="" width="36" height="36">Settled</a><nav><a href="index.html">Home</a><a href="chapters.html">Chapters</a><a href="practice.html" aria-current="page">Free practice</a><a href="support.html">Support</a></nav></header>
 <main>
 <h1>Free practice test</h1>
-<p class="meta">24 questions, picked at random from 300. You need 18 right to pass, just like the real test.</p>
+<p class="meta" id="intro">24 questions, picked at random from 300. You need 18 right to pass, just like the real test.</p>
+<div class="chips" id="modes" aria-label="Choose what to practise">
+<a class="chip" href="practice.html" data-mode="">Mixed test</a>
+<a class="chip" href="practice.html?chapter=values" data-mode="values">Values</a>
+<a class="chip" href="practice.html?chapter=uk" data-mode="uk">What is the UK?</a>
+<a class="chip" href="practice.html?chapter=history" data-mode="history">History</a>
+<a class="chip" href="practice.html?chapter=society" data-mode="society">Modern society</a>
+<a class="chip" href="practice.html?chapter=government" data-mode="government">Government and law</a>
+</div>
 
 <div id="quiz" aria-live="polite">
 <noscript><p>This practice test needs JavaScript turned on.</p></noscript>
@@ -31,7 +39,24 @@
 <script>
 (function () {
   var TOTAL = 24, PASS = 18;
+  var CHAPTERS = {
+    values: 'The values and principles of the UK',
+    uk: 'What is the UK?',
+    history: 'A long and illustrious history',
+    society: 'A modern, thriving society',
+    government: 'The UK government, the law and your role'
+  };
+  var chapter = new URLSearchParams(location.search).get('chapter');
+  if (!CHAPTERS[chapter]) chapter = null;
   var quiz = document.getElementById('quiz');
+  document.querySelectorAll('#modes .chip').forEach(function (c) {
+    if (c.dataset.mode === (chapter || '')) c.setAttribute('aria-current', 'page');
+  });
+  if (chapter) {
+    document.querySelector('h1').textContent = 'Chapter practice';
+    document.getElementById('intro').textContent = '24 questions from the chapter “' + CHAPTERS[chapter] + '”. You need 18 right to pass.';
+    document.title = CHAPTERS[chapter] + ' – Chapter Practice – Settled';
+  }
   var bank = [], round = [], index = 0, correct = 0, picked = [], locked = false;
 
   function shuffle(a) {
@@ -120,19 +145,24 @@
       ? 'That’s a pass. Keep practising until you pass every time.'
       : 'Not a pass this time: you need ' + PASS + '. Read the explanations and try again.'));
     var actions = el('div', 'quiz-actions');
-    var again = el('button', 'btn', 'Try another 24');
+    var again = el('button', 'btn', chapter ? 'Try this chapter again' : 'Try another 24');
     again.type = 'button';
     again.addEventListener('click', start);
-    var more = el('a', 'btn secondary', 'Get the app for 1,200+ questions');
+    var more = el('a', 'btn secondary', 'Settled app: 1,200+ questions, coming soon');
     more.href = 'index.html';
     actions.appendChild(again);
     actions.appendChild(more);
     quiz.appendChild(actions);
   }
 
-  fetch('questions-free.json')
+  fetch(chapter ? 'questions-chapters.json' : 'questions-free.json')
     .then(function (r) { return r.json(); })
-    .then(function (data) { bank = data; start(); })
+    .then(function (data) {
+      bank = chapter ? data.filter(function (q) { return q.c === chapter; }) : data;
+      TOTAL = Math.min(TOTAL, bank.length);
+      PASS = Math.ceil(TOTAL * 0.75);
+      start();
+    })
     .catch(function () {
       document.getElementById('loading').textContent = 'The questions could not be loaded. Please refresh the page.';
     });
