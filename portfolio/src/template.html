@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- DRAFT: keep out of search engines until you decide to launch. Remove this line to go public. -->
+<meta name="robots" content="noindex, nofollow">
+<title>Tinashe Rukasha – Portfolio</title>
+<meta name="description" content="Tinashe Rukasha: NHS clinical pharmacist and aspiring commercial solicitor in life sciences, app builder and host of the Commercial Synopsis podcast.">
+<link rel="icon" href="https://ruktin-eng.github.io/settled/icon.png">
+<script>document.documentElement.classList.add("js");</script>
+<style>
+:root {
+  --page: #eef1f5;
+  --stripe: #e3e8ef;
+  --surface: #ffffff;
+  --text: #1b2433;
+  --muted: #4f5b6e;
+  --line: #9db3d1;
+  --soft: #f3f6fb;
+  --xp1: #0a5ee8;   /* XP Luna blue */
+  --xp2: #3d95ff;
+  --xp3: #0045c8;
+  --frame: #0848c2;
+  --blue: #0a84ff;
+  --accent: #0b4fc4;
+  --accent-soft: #e2edff;
+  --letter: #f5f7ff;
+  --heading: #0b3fa5;
+  --veil: rgba(238,241,245,.84);
+  --stripe-a: rgba(227,232,239,.55);
+  --font: Tahoma, Verdana, "Segoe UI", Geneva, sans-serif;
+  --display: "Trebuchet MS", "Lucida Grande", Tahoma, sans-serif;
+  --mono: "Lucida Console", Consolas, "Courier New", monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --page: #0c1322;
+    --stripe: #101a2e;
+    --surface: #151f33;
+    --text: #e6ecf6;
+    --muted: #a9b6cc;
+    --line: #2f4672;
+    --soft: #1a2640;
+    --accent: #79b0ff;
+    --accent-soft: #15284a;
+    --heading: #8dbbff;
+    --veil: rgba(12,19,34,.88);
+    --stripe-a: rgba(16,26,46,.6);
+  }
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0; color: var(--text);
+  background-color: var(--page);
+  /* Faint "desktop wallpaper" photo under Aqua pinstripes */
+  background-image:
+    repeating-linear-gradient(180deg, transparent 0 2px, var(--stripe-a) 2px 4px),
+    linear-gradient(var(--veil), var(--veil)),
+    url("photo.jpg");
+  background-size: auto, auto, cover;
+  background-position: 0 0, 0 0, center 60%;
+  background-attachment: scroll, scroll, fixed;
+  font: 15px/1.6 var(--font);
+}
+a { color: var(--accent); }
+.wrap { max-width: 980px; margin: 0 auto; padding: 0 16px; }
+svg.sprite { image-rendering: pixelated; shape-rendering: crispEdges; flex: none; }
+
+/* ---------- Taskbar ---------- */
+.menubar {
+  position: sticky; top: 0; z-index: 10;
+  background: linear-gradient(180deg, #3a8cff 0%, #1f6ff0 8%, #1258e0 45%, #0d4fd6 55%, #1b5fe6 92%, #0b3fa5 100%);
+  border-bottom: 1px solid #0a3a9a; box-shadow: 0 2px 6px rgba(0,30,90,.35);
+}
+.menubar .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; height: 44px; }
+.menubar .name {
+  display: inline-flex; align-items: center; gap: 8px; height: 34px; padding: 0 18px 0 10px;
+  color: #fff; text-decoration: none; font: italic bold 15px var(--display); text-shadow: 1px 1px 1px rgba(0,0,0,.45);
+  background: linear-gradient(180deg, #5fc75a 0%, #3caa3a 45%, #2e962c 55%, #45b542 100%);
+  border-radius: 4px 16px 16px 4px; border: 1px solid #1f6e1d;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.45), 1px 1px 2px rgba(0,0,0,.3);
+}
+.menubar nav { display: flex; gap: 4px; flex-wrap: wrap; }
+.menubar nav a {
+  color: #fff; text-decoration: none; font-size: 13px; padding: 5px 12px; border-radius: 3px;
+  background: linear-gradient(180deg, rgba(255,255,255,.22), rgba(255,255,255,.06));
+  border: 1px solid rgba(0,20,80,.35); box-shadow: inset 0 1px 0 rgba(255,255,255,.3);
+  text-shadow: 0 1px 1px rgba(0,0,0,.35);
+}
+.menubar nav a:hover, .menubar nav a:focus-visible { background: linear-gradient(180deg, rgba(255,255,255,.4), rgba(255,255,255,.15)); outline: none; }
+
+/* ---------- XP windows ---------- */
+.win {
+  background: var(--surface); border: 3px solid var(--frame); border-top: 0;
+  border-radius: 8px 8px 4px 4px; overflow: hidden;
+  box-shadow: 0 6px 18px rgba(10,40,100,.22);
+  display: flex; flex-direction: column;
+}
+.titlebar {
+  display: flex; align-items: center; gap: 3px; height: 30px; padding: 0 5px 0 10px;
+  background: linear-gradient(180deg, #4a9bff 0%, var(--xp1) 10%, #0b5ef0 40%, var(--xp3) 88%, #003bb0 100%);
+  color: #fff; font: bold 13px var(--display); text-shadow: 1px 1px 1px rgba(0,0,0,.5);
+  border-radius: 6px 6px 0 0;
+}
+.titlebar .title { margin-right: auto; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; letter-spacing: .02em; }
+.ctl {
+  position: relative; width: 21px; height: 21px; flex: none; border-radius: 3px; border: 1px solid #fff;
+  background: linear-gradient(180deg, #6faaff, #2a6ff0 50%, #1556d8 51%, #3a82f5);
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,.12);
+}
+.ctl.close { background: linear-gradient(180deg, #f39b7f, #e2552d 50%, #d4401b 51%, #e86a45); }
+.ctl::after { content: ""; position: absolute; background: #fff; }
+.ctl.min::after { left: 5px; right: 8px; bottom: 5px; height: 3px; }
+.ctl.max::after { inset: 4px; background: transparent; border: 2px solid #fff; border-top-width: 3px; }
+.ctl.close::after { content: "×"; inset: 0; background: none; color: #fff; font: bold 17px/19px Arial, sans-serif; text-align: center; }
+.win-body { padding: 22px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+.statusbar {
+  display: flex; gap: 2px; padding: 2px; font-size: 12px; color: var(--muted);
+  background: var(--soft); border-top: 1px solid var(--line);
+}
+.statusbar span { padding: 2px 8px; border: 1px solid var(--line); border-color: var(--line) #fff #fff var(--line); }
+.statusbar span:first-child { flex: 1; }
+
+/* ---------- Aqua gel buttons ---------- */
+.btn {
+  position: relative; display: inline-flex; align-items: center; gap: 8px;
+  padding: 9px 20px; border-radius: 999px; text-decoration: none; cursor: pointer;
+  font: bold 14px var(--display); color: #fff; text-shadow: 0 1px 1px rgba(0,30,90,.6);
+  background: linear-gradient(180deg, #8cc4ff 0%, #3c95ff 48%, #0a6cf0 52%, #3f9cff 100%);
+  border: 1px solid #0a4fb5; overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0,40,120,.35), inset 0 -2px 4px rgba(160,220,255,.6);
+}
+.btn::before {
+  content: ""; position: absolute; left: 8%; right: 8%; top: 1px; height: 46%;
+  border-radius: 999px; background: linear-gradient(180deg, rgba(255,255,255,.85), rgba(255,255,255,.1));
+  pointer-events: none;
+}
+.btn > * { position: relative; }
+.btn.ghost {
+  color: #1b2433; text-shadow: 0 1px 0 rgba(255,255,255,.7); border-color: #8a96a8;
+  background: linear-gradient(180deg, #f4f6f9 0%, #dde2ea 48%, #c8cfda 52%, #e9edf2 100%);
+  box-shadow: 0 2px 4px rgba(0,0,0,.2), inset 0 -2px 4px rgba(255,255,255,.7);
+}
+.btn:hover { filter: brightness(1.07) saturate(1.1); }
+.btn:active { transform: translateY(1px); filter: brightness(.95); }
+.btn:focus-visible { outline: 2px dotted var(--accent); outline-offset: 3px; }
+.buttons { display: flex; gap: 12px; flex-wrap: wrap; }
+
+/* ---------- Hero ---------- */
+.hero { margin: 40px 0 52px; }
+.hero .win-body {
+  display: grid; grid-template-columns: auto 1fr; gap: 36px; align-items: center; padding: 34px 32px 40px;
+  background: radial-gradient(120% 90% at 100% 0%, var(--accent-soft), transparent 60%);
+}
+.eyebrow { display: flex; align-items: center; gap: 8px; font: bold 12px var(--font); color: var(--accent); letter-spacing: .04em; text-transform: uppercase; margin: 0 0 8px; }
+h1 {
+  font: bold clamp(32px, 5.6vw, 50px)/1.05 var(--display); letter-spacing: -0.02em; margin: 0 0 14px;
+  color: var(--heading); text-shadow: 0 2px 0 rgba(255,255,255,.6), 0 3px 6px rgba(10,60,160,.18);
+}
+.lead { color: var(--muted); font-size: 16.5px; margin: 0 0 22px; max-width: 58ch; }
+
+/* ---------- Monogram (faint picture tile) ---------- */
+.mark {
+  position: relative; overflow: hidden; container-type: inline-size;
+  background: linear-gradient(180deg, #3a9bff 0%, var(--blue) 45%, #0870e8 100%);
+  aspect-ratio: 8 / 7; border-radius: 14px;
+  font-family: Arial, Helvetica, sans-serif; font-weight: bold; line-height: 1;
+}
+.mark::after { /* glossy sheen */
+  content: ""; position: absolute; inset: 0 0 55% 0; z-index: 3; pointer-events: none;
+  background: linear-gradient(180deg, rgba(255,255,255,.35), rgba(255,255,255,0));
+}
+.mark .l1, .mark .l2 { position: absolute; top: 10cqw; font-size: 46cqw; letter-spacing: -0.04em; }
+.mark .l1 { left: 8cqw; color: var(--letter); z-index: 2; text-shadow: 0 1cqw 2cqw rgba(0,30,90,.25); }
+.mark .l2 { left: 39cqw; color: var(--blue); z-index: 2; -webkit-text-stroke: .5cqw #fff; paint-order: stroke fill; text-shadow: 0 .6cqw 1.6cqw rgba(0,20,60,.35); }
+.mark .tile {
+  position: absolute; left: 37cqw; top: 6cqw; width: 52cqw; height: 72cqw; border-radius: 9cqw;
+  background-size: cover; background-position: center; opacity: .3;
+  background-image:
+    repeating-linear-gradient(90deg, rgba(255,255,255,.35) 0 1px, transparent 1px 7px),
+    repeating-linear-gradient(0deg, rgba(255,255,255,.25) 0 1px, transparent 1px 8px),
+    linear-gradient(172deg, #ffffff 0%, #dbe7f7 40%, #a9bfdc 100%);
+}
+.mark .tile.app { background-image: url("https://ruktin-eng.github.io/settled/icon.png"); opacity: .4; }
+.hero .mark .tile { background-image: linear-gradient(rgba(6,24,64,.55), rgba(6,24,64,.55)), url("photo.jpg"); background-position: center, 30% 55%; opacity: .9; }
+.hero .mark {
+  width: 210px; box-shadow: 0 8px 20px rgba(10,60,160,.3);
+  -webkit-box-reflect: below 6px linear-gradient(transparent 62%, rgba(255,255,255,.28));
+}
+.card .mark { width: auto; aspect-ratio: 16 / 9; border-radius: 10px; margin: 0 0 6px; }
+.card .mark .l1, .card .mark .l2 { top: 8cqw; font-size: 38cqw; }
+.card .mark .l1 { left: 13cqw; }
+.card .mark .l2 { left: 42cqw; }
+.card .mark .tile { left: 40cqw; top: 5cqw; width: 38cqw; height: 52cqw; border-radius: 7cqw; }
+
+/* ---------- Sections ---------- */
+section { padding: 22px 0 44px; }
+h2 {
+  display: flex; align-items: center; gap: 12px; margin: 0 0 22px; padding-bottom: 8px;
+  font: bold 28px var(--display); color: var(--heading); letter-spacing: -0.01em;
+  border-bottom: 2px solid; border-image: linear-gradient(90deg, var(--blue), transparent) 1;
+}
+h3 { margin: 0 0 4px; font: bold 17px var(--display); }
+.tag {
+  align-self: flex-start; font: bold 11px var(--font); letter-spacing: .03em; color: var(--accent);
+  padding: 2px 10px; border-radius: 999px; border: 1px solid var(--line);
+  background: linear-gradient(180deg, #fff, var(--accent-soft));
+}
+@media (prefers-color-scheme: dark) { .tag { background: var(--accent-soft); } }
+.label { font: bold 12px var(--font); color: var(--heading); text-transform: uppercase; letter-spacing: .05em; margin: 8px 0 2px; }
+
+/* Project windows */
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 24px; }
+.card { transition: transform .15s, box-shadow .15s; }
+.card:hover { transform: translateY(-3px); box-shadow: 0 12px 26px rgba(10,40,100,.28); }
+.card p { margin: 0; color: var(--muted); font-size: 14px; }
+.card ul { margin: 0; padding-left: 0; list-style: none; color: var(--muted); font-size: 13.5px; }
+.card li { padding-left: 18px; position: relative; margin: 3px 0; }
+.card li::before {
+  content: ""; position: absolute; left: 2px; top: .5em; width: 8px; height: 8px; border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #bfe0ff, var(--blue) 60%, #0050c0);
+}
+.card .links { margin-top: auto; padding-top: 8px; }
+.progress { margin-top: 6px; }
+.progress span { display: block; font-size: 12px; color: var(--muted); margin-bottom: 4px; }
+.progress .bar {
+  height: 18px; padding: 2px; border: 1px solid #7f9db9; border-radius: 3px; background: #fff; overflow: hidden;
+}
+.progress .bar::before {
+  content: ""; display: block; height: 100%; width: 62%;
+  background: repeating-linear-gradient(90deg, #4bd04b 0 8px, transparent 8px 10px);
+  -webkit-mask: linear-gradient(180deg, #000, #000); animation: load 3s steps(6) infinite alternate;
+}
+@keyframes load { from { width: 38%; } to { width: 74%; } }
+
+.now {
+  display: inline-block; margin-left: 4px; padding: 0 7px; border-radius: 999px; font-size: 10px; vertical-align: 1px;
+  color: #fff; text-shadow: 0 1px 0 rgba(0,60,0,.5); border: 1px solid #1f6e1d;
+  background: linear-gradient(180deg, #7fdc7a, #3caa3a 50%, #2e962c 51%, #4fbf4b);
+}
+/* Law */
+.law { display: grid; grid-template-columns: 1.1fr 1fr; gap: 24px; align-items: start; }
+.law .win-body p { margin: 0; }
+h3.big { font-size: 23px; color: var(--heading); line-height: 1.15; margin: 2px 0 4px; }
+.skills4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 24px; }
+.skills4 .win { border: 1px solid var(--line); border-radius: 6px; box-shadow: 0 2px 6px rgba(10,40,100,.12); }
+.skills4 .win-body { padding: 0; gap: 0; }
+.skills4 .label {
+  margin: 0; padding: 7px 12px; color: var(--heading); text-transform: none; letter-spacing: 0; font-size: 13px;
+  background: linear-gradient(90deg, #fff, #c6d6f7); border-bottom: 1px solid var(--line);
+}
+@media (prefers-color-scheme: dark) { .skills4 .label { background: linear-gradient(90deg, var(--surface), var(--accent-soft)); } }
+.skills4 p:not(.label) { margin: 0; padding: 10px 12px 12px; font-size: 13.5px; color: var(--muted); }
+
+/* Podcast */
+.podcast { display: grid; grid-template-columns: 1fr 1.25fr; gap: 24px; align-items: start; }
+.podcast iframe { width: 100%; border: 0; display: block; min-height: 352px; background: #000; }
+#spotify-embed { min-height: 352px; background: #000; }
+.podcast .win-body p { margin: 0; }
+.player .win-body { padding: 0; gap: 0; }
+
+/* Quick play: Windows Media Player style control bar */
+.wmp {
+  display: flex; align-items: center; gap: 14px; padding: 12px 16px;
+  background: linear-gradient(180deg, #2b3f66 0%, #15223d 50%, #0c1628 51%, #1a2a49 100%);
+  border-bottom: 1px solid #000; color: #cfe3ff;
+}
+.playbtn {
+  position: relative; flex: none; width: 54px; height: 54px; border-radius: 50%; cursor: pointer;
+  border: 2px solid #0a3c8f;
+  background: radial-gradient(circle at 50% 30%, #bfe2ff 0%, #4ba3ff 35%, #0a6cf0 65%, #063f9e 100%);
+  box-shadow: 0 0 0 3px rgba(120,180,255,.25), 0 3px 8px rgba(0,0,0,.5), inset 0 -4px 8px rgba(160,220,255,.6);
+}
+.playbtn::before {
+  content: ""; position: absolute; left: 18%; right: 18%; top: 4px; height: 42%; border-radius: 50%;
+  background: linear-gradient(180deg, rgba(255,255,255,.85), rgba(255,255,255,0)); pointer-events: none;
+}
+.playbtn .icon { /* play triangle */
+  position: absolute; left: 21px; top: 15px; width: 0; height: 0;
+  border-left: 17px solid #fff; border-top: 11px solid transparent; border-bottom: 11px solid transparent;
+  filter: drop-shadow(0 1px 1px rgba(0,30,90,.6));
+}
+.playbtn.playing .icon { /* pause bars */
+  left: 17px; top: 15px; width: 6px; height: 22px; border: 0; background: #fff; box-shadow: 11px 0 0 #fff;
+}
+.playbtn:hover { filter: brightness(1.1); }
+.playbtn:active { transform: scale(.96); }
+.playbtn:focus-visible { outline: 2px dotted #8fc4ff; outline-offset: 4px; }
+.wmp-info { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px; }
+.wmp-label { font: bold 11px var(--font); text-transform: uppercase; letter-spacing: .08em; color: #7fd0ff; }
+.wmp-title { font: bold 14px var(--display); color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.seek { height: 8px; border-radius: 4px; background: #050b16; border: 1px solid #33496f; overflow: hidden; margin-top: 3px; }
+.seek-fill { height: 100%; width: 0; background: linear-gradient(180deg, #9fe8ff, #2fa8ff 50%, #0a6cf0); transition: width .4s linear; }
+.wmp-time { font: 13px var(--mono); color: #9fe8ff; background: #050b16; border: 1px solid #33496f; padding: 3px 8px; border-radius: 3px; }
+
+/* CV */
+.cv-cols { display: grid; grid-template-columns: 1.15fr 1fr; gap: 24px; align-items: start; }
+.side { display: flex; flex-direction: column; gap: 24px; }
+.timeline { list-style: none; margin: 0; padding: 0; }
+.timeline li { display: grid; grid-template-columns: 124px 1fr; gap: 14px; padding: 14px 0; border-bottom: 1px dotted var(--line); }
+.timeline li:first-child { padding-top: 0; }
+.timeline li:last-child { border-bottom: 0; padding-bottom: 0; }
+.when { font: bold 12px/1.5 var(--font); color: var(--accent); padding-top: 3px; text-transform: uppercase; letter-spacing: .03em; }
+.timeline .org { color: var(--muted); font-size: 13.5px; margin: 0 0 6px; }
+.timeline p { margin: 0; font-size: 14px; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chips span {
+  padding: 3px 10px; font-size: 12.5px; border-radius: 3px; border: 1px solid #7f9db9; color: var(--text);
+  background: linear-gradient(180deg, #ffffff, #e6ebf3);
+}
+@media (prefers-color-scheme: dark) { .chips span { background: var(--soft); border-color: var(--line); } }
+
+/* Contact */
+.contact .win-body { flex-direction: row; align-items: center; gap: 22px; flex-wrap: wrap; }
+.contact p { margin: 0; flex: 1 1 260px; }
+
+footer { padding: 6px 0 44px; font-size: 12.5px; color: var(--muted); }
+footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+
+@media (max-width: 900px) { .skills4 { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 720px) {
+  .hero { margin-top: 24px; }
+  .hero .win-body { grid-template-columns: 1fr; padding: 22px 20px 28px; gap: 28px; }
+  .hero .mark { width: 150px; }
+  .podcast, .cv-cols, .law { grid-template-columns: 1fr; }
+  .skills4 { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .timeline li { grid-template-columns: 1fr; gap: 0; }
+  .menubar .wrap { height: auto; padding-top: 6px; padding-bottom: 6px; flex-wrap: wrap; }
+  .menubar nav a { padding: 4px 8px; font-size: 12px; }
+  h2 { font-size: 23px; }
+}
+/* ---------- Scroll transitions ---------- */
+/* Windows "open" like XP; monogram images wipe in with a slow zoom and the letters slide into place. */
+.js .reveal { opacity: 0; transform: translateY(28px) scale(.96); transform-origin: 50% 0; }
+.js .reveal.in {
+  opacity: 1; transform: none;
+  transition: opacity .55s ease-out, transform .65s cubic-bezier(.2,.9,.25,1.15);
+  transition-delay: var(--delay, 0s);
+}
+.js .reveal .mark { clip-path: inset(0 100% 0 0 round 14px); }
+.js .reveal.in .mark { clip-path: inset(0 0 0 0 round 14px); transition: clip-path .9s cubic-bezier(.65,0,.35,1) calc(var(--delay, 0s) + .15s); }
+.js .reveal .mark .tile { transform: scale(1.25); }
+.js .reveal.in .mark .tile { transform: scale(1); transition: transform 2.4s cubic-bezier(.2,.7,.2,1) calc(var(--delay, 0s) + .2s); }
+.js .reveal .mark .l1 { transform: translateX(-30cqw); opacity: 0; }
+.js .reveal .mark .l2 { transform: translateX(30cqw); opacity: 0; }
+.js .reveal.in .mark .l1, .js .reveal.in .mark .l2 {
+  transform: none; opacity: 1;
+  transition: transform .8s cubic-bezier(.2,.9,.25,1.1) calc(var(--delay, 0s) + .45s), opacity .5s calc(var(--delay, 0s) + .45s);
+}
+.js h2.reveal { transform: translateX(-24px); }
+.js h2.reveal.in { transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .js .reveal, .js .reveal .mark, .js .reveal .mark .tile, .js .reveal .mark .l1, .js .reveal .mark .l2 {
+    opacity: 1 !important; transform: none !important; clip-path: none !important; transition: none !important;
+  }
+  .progress .bar::before { animation: none; }
+  .card, .btn { transition: none; }
+}
+@media print {
+  .menubar, .buttons, .player, .statusbar, .progress { display: none; }
+  body { background: #fff; color: #000; }
+  .win { box-shadow: none; }
+  section { break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+
+<header class="menubar">
+  <div class="wrap">
+    <a class="name" href="#top">{{pill:2}}Tinashe Rukasha</a>
+    <nav>
+      <a href="#law">Law</a>
+      <a href="#projects">Projects</a>
+      <a href="#podcast">Podcast</a>
+      <a href="#cv">CV</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap" id="top">
+
+  <div class="win hero">
+    <div class="titlebar"><span class="title">WELCOME.APP</span><span class="ctl min"></span><span class="ctl max"></span><span class="ctl close"></span></div>
+    <div class="win-body">
+      <div class="mark" aria-hidden="true"><span class="l1">T</span><span class="tile"></span><span class="l2">R</span></div>
+      <div>
+        <p class="eyebrow">{{sparkle:2}}Clinical pharmacist · Aspiring solicitor · App builder · Podcaster</p>
+        <h1>Hi, I’m Tinashe Rukasha.</h1>
+        <p class="lead">I’m an NHS clinical pharmacist with a first-class MPharm from Keele, working towards a career as a commercial solicitor in life sciences. I’m interested in where medicines, technology and law meet, so I also build health apps and host a podcast on business and current affairs.</p>
+        <div class="buttons">
+          <a class="btn" href="#law">{{scales:1}}Law &amp; life sciences</a>
+          <a class="btn ghost" href="#projects">See my work</a>
+          <a class="btn ghost" href="#cv" onclick="window.print(); return false;">{{floppy:1}}Save CV</a>
+        </div>
+      </div>
+    </div>
+    <div class="statusbar"><span>Done</span><span>Milton Keynes, UK</span><span>Open to training contracts</span></div>
+  </div>
+
+  <section id="law">
+    <h2>{{scales:2}}Law</h2>
+    <div class="law">
+      <div class="win law-main">
+        <div class="titlebar"><span class="title">ASPIRING_SOLICITOR.DOC</span><span class="ctl min"></span><span class="ctl max"></span><span class="ctl close"></span></div>
+        <div class="win-body">
+          <span class="tag">Commercial law · Life sciences</span>
+          <h3 class="big">From the pharmacy to commercial law</h3>
+          <p>My interest in law started while studying pharmacy. Cases like the UK Supreme Court’s 2018 decision invalidating Pfizer’s second medical use patent for pregabalin, and laws like the Human Medicines Regulations 2012, showed me how much law shapes how medicines are developed, sold and regulated.</p>
+          <p>I want to become a commercial solicitor in the life sciences sector, working on the patents, regulation and deals that bring new treatments to patients. My clinical experience means I understand what those products mean for the people who use them.</p>
+          <p class="label">Areas I’m focused on</p>
+          <div class="chips">
+            <span>Intellectual property &amp; patents</span>
+            <span>Life sciences regulation</span>
+            <span>Unified Patent Court</span>
+            <span>Healthcare M&amp;A</span>
+            <span>Medical device regulation</span>
+            <span>Data protection</span>
+            <span>AI &amp; digital health</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="win">
+        <div class="titlebar"><span class="title">LEGAL_EXPERIENCE.LOG</span><span class="ctl min"></span><span class="ctl max"></span><span class="ctl close"></span></div>
+        <div class="win-body">
+          <ul class="timeline">
+            <li>
+              <span class="when">2026 <span class="now">Now</span></span>
+              <div>
+                <h3>Bristows LLP mentoring scheme</h3>
+                <p class="org">Bristows LLP with Aspiring Solicitors</p>
+                <p>Being mentored this year by lawyers at Bristows, a firm known for intellectual property work in life sciences and technology, including patent cases at the Unified Patent Court.</p>
+              </div>
+            </li>
+            <li>
+              <span class="when">Jun – Jul 2025</span>
+              <div>
+                <h3>Legal Intern, AstraZeneca with Eversheds Sutherland</h3>
+                <p class="org">Aspiring Solicitors legal internship · Cambridge</p>
+                <p>Worked with in-house and private practice lawyers, with exposure to intellectual property and patents. I co-presented to solicitors and partners on how legal teams handle AI, digital medicines, mRNA and cell and gene therapies, covering IP, cybersecurity and health regulation.</p>
+              </div>
+            </li>
+            <li>
+              <span class="when">Mentoring</span>
+              <div>
+                <h3>Covington &amp; Burling LLP and AstraZeneca</h3>
+                <p class="org">Mentoring scheme with practising solicitors</p>
+                <p>Insight into regulatory and life sciences legal work in both a global law firm and an in-house team.</p>
+              </div>
+            </li>
+            <li>
+              <span class="when">Workshop</span>
+              <div>
+                <h3>Intellectual property workshop</h3>
+                <p class="org">Bristows LLP</p>
+                <p>Explored patent litigation in life sciences and technology, including work before the Unified Patent Court.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="skills4">
+      <div class="win"><div class="win-body"><p class="label">01 · Clear communication</p><p>Explaining complex clinical information to patients, clinicians and the public every day.</p></div></div>
+      <div class="win"><div class="win-body"><p class="label">02 · Respectful challenge</p><p>Questioning prescribing decisions by senior clinicians while staying confident in my own judgement.</p></div></div>
+      <div class="win"><div class="win-body"><p class="label">03 · Collaboration</p><p>Building shared treatment plans with doctors, nurses and pharmacists from different backgrounds.</p></div></div>
+      <div class="win"><div class="win-body"><p class="label">04 · Commercial awareness</p><p>Weekly analysis of business and policy news on my podcast, <a href="#podcast">Commercial Synopsis</a>.</p></div></div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>{{phone:2}}Projects</h2>
+    <div class="grid">
+
+      <article class="win card">
+        <div class="titlebar"><span class="title">CLINIGUIDE</span><span class="ctl min"></span><span class="ctl max"></span><span class="ctl close"></span></div>
+        <div class="win-body">
+          <div class="mark" aria-hidden="true"><span class="l1">C</span><span class="tile"></span><span class="l2">G</span></div>
+          <span class="tag">iOS app · Healthcare</span>
+          <h3>CliniGuide</h3>
+          <p>A mobile app that brings prescribing guidelines into one searchable library for primary care clinicians.</p>
+          <ul>
+            <li>Built in Swift, with AI tools such as Claude Code</li>
+            <li>Designed around real primary care workflows</li>
+            <li>Taught me about copyright, data protection and medical device regulation</li>
+          </ul>
+          <div class="progress"><span>In development…</span><div class="bar"></div></div>
+        </div>
+      </article>
+
+      <article class="win card">
+        <div class="titlebar"><span class="title">SETTLED</span><span class="ctl min"></span><span class="ctl max"></span><span class="ctl close"></span></div>
+        <div class="win-body">
+          <div class="mark" aria-hidden="true"><span class="l1">S</span><span class="tile app"></span></div>
+          <span class="tag">Mobile app · Education</span>
+          <h3>Settled</h3>
+          <p>A study app and free website for the UK’s Life in the UK test, with mock tests, chapter practice and plain-English explanations.</p>
+          <ul>
+            <li>Over 1,200 original questions, each with an explanation</li>
+            <li>Timed mock tests that mirror the real exam (24 questions, 45 minutes)</li>
+            <li>Readiness score, review list and offline progress on iPhone and Android</li>
+            <li>Free web practice: 300 questions and chapter summaries</li>
+          </ul>
+          <div class="links"><a class="btn ghost" href="https://ruktin-eng.github.io/settled/index.html" target="_blank" rel="noopener">Visit Settled</a></div>
+        </div>
+      </article>
+
+      <article class="win card">
+        <div class="titlebar"><span class="title">COMMERCIAL SYNOPSIS</span><span class="ctl min"></span><span class="ctl max"></span><span class="ctl close"></span></div>
+        <div class="win-body">
+          <div class="mark" aria-hidden="true"><span class="l1">C</span><span class="tile"></span><span class="l2">S</span></div>
+          <span class="tag">Podcast</span>
+          <h3>Commercial Synopsis</h3>
+          <p>A podcast on Spotify, with 11 episodes so far, where I break down major commercial, political and economic stories.</p>
+          <div class="links"><a class="btn ghost" href="https://open.spotify.com/show/4LJJU349OM7sP6eChqVRIF" target="_blank" rel="noopener">Listen on Spotify</a></div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section id="podcast">
+    <h2>{{mic:2}}Podcast</h2>
+    <div class="podcast">
+      <div class="win">
+        <div class="titlebar"><span class="title">README.TXT</span><span class="ctl min"></span><span class="ctl max"></span><span class="ctl close"></span></div>
+        <div class="win-body">
+          <span class="tag">11 episodes · Spotify</span>
+          <h3>Commercial Synopsis</h3>
+          <p>I pick big stories in business, politics and the economy and break them down into clear analysis: what happened, and why it matters.</p>
+          <p>Episodes have covered topics from DeepSeek’s disruption of the markets to tariffs straining gold supply chains. Making the show has built my commercial awareness, along with skills in audio editing, sound production and graphic design.</p>
+          <div class="links" style="margin-top:8px"><a class="btn" href="https://open.spotify.com/show/4LJJU349OM7sP6eChqVRIF" target="_blank" rel="noopener">{{mic:1}}Open in Spotify</a></div>
+        </div>
+      </div>
+      <div class="win player">
+        <div class="titlebar"><span class="title">NOW PLAYING</span><span class="ctl min"></span><span class="ctl max"></span><span class="ctl close"></span></div>
+        <div class="win-body">
+          <div class="wmp">
+            <button class="playbtn" id="quickplay" type="button" aria-label="Play the latest episode"><span class="icon" aria-hidden="true"></span></button>
+            <div class="wmp-info">
+              <span class="wmp-label" id="wmp-state">Quick play</span>
+              <span class="wmp-title">Commercial Synopsis · latest episode</span>
+              <div class="seek" aria-hidden="true"><div class="seek-fill" id="wmp-fill"></div></div>
+            </div>
+            <span class="wmp-time" id="wmp-time">0:00</span>
+          </div>
+          <div id="spotify-embed">
+            <iframe title="Commercial Synopsis on Spotify" src="https://open.spotify.com/embed/show/4LJJU349OM7sP6eChqVRIF" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="cv">
+    <h2>{{floppy:2}}CV</h2>
+    <div class="cv-cols">
+      <div class="win">
+        <div class="titlebar"><span class="title">EXPERIENCE.DOC</span><span class="ctl min"></span><span class="ctl max"></span><span class="ctl close"></span></div>
+        <div class="win-body">
+          <ul class="timeline">
+            <li>
+              <span class="when">Mar 2024 – now</span>
+              <div>
+                <h3>Primary Care Network Clinical Pharmacist</h3>
+                <p class="org">Northamptonshire Healthcare NHS Foundation Trust</p>
+                <p>I work across several GP surgeries, doing structured medication reviews and running hypertension, lipid and heart failure clinics. I apply NICE and MHRA guidance, support QOF targets and safety work on high-risk medicines, and supervise a trainee pharmacy technician. I use AI tools such as Accurx and Heidi in practice.</p>
+              </div>
+            </li>
+            <li>
+              <span class="when">Jun – Jul 2025</span>
+              <div>
+                <h3>Legal Intern</h3>
+                <p class="org">AstraZeneca / Eversheds Sutherland · Aspiring Solicitors</p>
+                <p>In-house and private practice experience in life sciences law. <a href="#law">More in Law</a>.</p>
+              </div>
+            </li>
+            <li>
+              <span class="when">Aug 2023 – Feb 2024</span>
+              <div>
+                <h3>Rotational Clinical Pharmacist</h3>
+                <p class="org">Milton Keynes University Hospital</p>
+                <p>Delivered clinical pharmacy on the cardiology unit and covered week-long on-call periods as the sole contact for urgent medicines queries.</p>
+              </div>
+            </li>
+            <li>
+              <span class="when">Aug 2022 – Jul 2023</span>
+              <div>
+                <h3>Multi-Sector Trainee Pharmacist</h3>
+                <p class="org">Betsi Cadwaladr University Health Board, NHS Wales</p>
+                <p>Trained across community, primary and secondary care. A GP audit I led found a medication switch worth £1,032.85 a month in savings, and I helped five patients stop smoking in four months.</p>
+              </div>
+            </li>
+            <li>
+              <span class="when">Jul 2021</span>
+              <div>
+                <h3>Research Assistant</h3>
+                <p class="org">Keele University</p>
+                <p>Chemoinformatics research under Dr Jóhannes Reynisson FRSC: I built a dataset of drug plasma half-lives and analysed how they relate to molecular descriptors.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="side">
+        <div class="win">
+          <div class="titlebar"><span class="title">EDUCATION.DOC</span><span class="ctl min"></span><span class="ctl max"></span><span class="ctl close"></span></div>
+          <div class="win-body">
+            <ul class="timeline">
+              <li>
+                <span class="when">MPharm</span>
+                <div>
+                  <h3>Master of Pharmacy, First-Class Honours</h3>
+                  <p class="org">Keele University</p>
+                  <p>Undergraduate research on machine learning to predict how well drugs penetrate the skin.</p>
+                </div>
+              </li>
+              <li>
+                <span class="when">Postgrad</span>
+                <div>
+                  <h3>Primary Care Pharmacy Education Pathway</h3>
+                  <p class="org">CPPE</p>
+                </div>
+              </li>
+              <li>
+                <span class="when">Registered</span>
+                <div>
+                  <h3>Pharmacist</h3>
+                  <p class="org">General Pharmaceutical Council (GPhC) · 2233821</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="win">
+          <div class="titlebar"><span class="title">SKILLS.SYS</span><span class="ctl min"></span><span class="ctl max"></span><span class="ctl close"></span></div>
+          <div class="win-body">
+            <div class="chips">
+              <span>Structured medication reviews</span>
+              <span>Hypertension &amp; cardiovascular care</span>
+              <span>NICE &amp; MHRA guidance</span>
+              <span>Medicines optimisation</span>
+              <span>Clinical audit</span>
+              <span>AI tools in practice</span>
+              <span>Swift / SwiftUI</span>
+              <span>Kotlin</span>
+              <span>Mobile app development</span>
+              <span>Podcasting</span>
+              <span>Commercial awareness</span>
+            </div>
+            <p class="label">Languages</p>
+            <div class="chips"><span>English (native)</span><span>Shona (native)</span></div>
+            <p class="label">Outside work</p>
+            <div class="chips"><span>Golf</span><span>Swimming</span><span>Bouldering</span><span>Formula 1</span><span>Reading</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>{{mail:2}}Contact</h2>
+    <div class="win contact">
+      <div class="titlebar"><span class="title">SAY HELLO</span><span class="ctl min"></span><span class="ctl max"></span><span class="ctl close"></span></div>
+      <div class="win-body">
+        <p>Open to training contract opportunities in commercial law, digital health projects and guest spots on the podcast. Based in Milton Keynes, UK.</p>
+        <div class="buttons">
+          <a class="btn" href="mailto:rukashatinashe12@gmail.com">{{mail:1}}Email me</a>
+          <a class="btn ghost" href="https://www.linkedin.com/in/tinashe-rodney-r-045826149/" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn ghost" href="https://github.com/ruktin-eng">GitHub</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap"><span>© 2026 Tinashe Rukasha</span><span>Best viewed at 1024×768</span></div>
+</footer>
+
+<script>
+// Scroll transitions: reveal windows and headings as they enter the viewport.
+(function () {
+  var els = document.querySelectorAll("main .win, main h2");
+  els.forEach(function (el) {
+    el.classList.add("reveal");
+    // Stagger siblings in the same row (project cards, strength boxes, side-by-side windows).
+    var sibs = Array.prototype.filter.call(el.parentElement.children, function (c) { return c.matches(".win"); });
+    var i = sibs.indexOf(el);
+    if (i > 0) el.style.setProperty("--delay", (i * 0.12) + "s");
+  });
+  if (!("IntersectionObserver" in window)) { els.forEach(function (el) { el.classList.add("in"); }); return; }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
+  els.forEach(function (el) { io.observe(el); });
+})();
+
+// Quick play: plays the latest episode right here on the page by driving
+// the Spotify embed through Spotify's iFrame API.
+(function () {
+  var btn = document.getElementById("quickplay");
+  var state = document.getElementById("wmp-state");
+  var fill = document.getElementById("wmp-fill");
+  var time = document.getElementById("wmp-time");
+  var controller = null;
+  var pending = false;
+
+  function fmt(ms) {
+    var s = Math.floor(ms / 1000);
+    return Math.floor(s / 60) + ":" + String(s % 60).padStart(2, "0");
+  }
+  function setPlaying(on) {
+    btn.classList.toggle("playing", on);
+    btn.setAttribute("aria-label", on ? "Pause" : "Play the latest episode");
+    state.textContent = on ? "Now playing" : (controller ? "Paused" : "Quick play");
+  }
+
+  window.onSpotifyIframeApiReady = function (IFrameAPI) {
+    var host = document.getElementById("spotify-embed");
+    var el = document.createElement("div");
+    host.innerHTML = "";
+    host.appendChild(el);
+    IFrameAPI.createController(el, { uri: "spotify:show:4LJJU349OM7sP6eChqVRIF", width: "100%", height: 352 }, function (c) {
+      controller = c;
+      if (pending) { pending = false; c.play(); }
+      c.addListener("playback_update", function (e) {
+        var d = e.data;
+        setPlaying(!d.isPaused);
+        if (d.duration) {
+          fill.style.width = (100 * d.position / d.duration).toFixed(1) + "%";
+          time.textContent = fmt(d.position);
+        }
+      });
+    });
+  };
+
+  btn.addEventListener("click", function () {
+    if (controller) { controller.togglePlay(); return; }
+    // Player still loading: start as soon as it's ready.
+    pending = true;
+    state.textContent = "Loading…";
+    document.getElementById("spotify-embed").scrollIntoView({ behavior: "smooth", block: "nearest" });
+  });
+
+  var api = document.createElement("script");
+  api.src = "https://open.spotify.com/embed/iframe-api/v1";
+  api.async = true;
+  document.body.appendChild(api);
+})();
+</script>
+</body>
+</html>
