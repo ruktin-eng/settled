@@ -63,3 +63,42 @@ th, td { text-align: left; vertical-align: top; padding: 10px 8px; border-bottom
 th { color: var(--muted); font-weight: 600; }
 .fill { background: var(--fill); padding: 0 4px; border-radius: 4px; }
 footer { max-width: 760px; margin: 0 auto 40px; padding: 0 16px; color: var(--muted); font-size: 14px; text-align: center; }
+
+/* Navigation wraps on phones */
+.bar { flex-wrap: wrap; }
+nav { flex-wrap: wrap; gap: 4px 16px; }
+
+/* Home page */
+.hero { text-align: center; padding: 8px 0 8px; }
+.hero img { border-radius: 22px; }
+.hero h1 { margin-top: 12px; }
+.buttons { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin: 20px 0 8px; }
+.btn { display: inline-block; padding: 12px 20px; border-radius: 12px; background: var(--brand); color: #fff; text-decoration: none; font-weight: 700; border: 0; font: inherit; font-weight: 700; cursor: pointer; }
+.btn.secondary { background: transparent; color: var(--link); border: 1.5px solid var(--line); }
+.btn[aria-disabled="true"] { opacity: .55; pointer-events: none; }
+.note { color: var(--muted); font-size: 14px; text-align: center; margin: 4px 0 0; }
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin: 16px 0; }
+.card { display: block; border: 1px solid var(--line); border-radius: 14px; padding: 16px; color: var(--text); text-decoration: none; }
+.card strong { display: block; color: var(--link); margin-bottom: 4px; }
+.card span { color: var(--muted); font-size: 15px; }
+.facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin: 16px 0; }
+.fact { border: 1px solid var(--line); border-radius: 14px; padding: 14px; text-align: center; }
+.fact b { display: block; font-size: 26px; color: var(--link); }
+.fact span { color: var(--muted); font-size: 14px; }
+.callout { border-left: 4px solid var(--link); background: var(--bg); padding: 12px 16px; border-radius: 0 12px 12px 0; margin: 20px 0; }
+
+/* Ad slots: empty until AdSense is approved */
+.ad { margin: 28px 0; min-height: 0; }
+
+/* Practice quiz */
+.quiz-progress { color: var(--muted); font-size: 15px; margin: 0 0 8px; }
+.quiz-q { font-size: 20px; font-weight: 600; margin: 8px 0 16px; }
+.opts { display: grid; gap: 10px; }
+.opt { text-align: left; padding: 14px 16px; border-radius: 12px; border: 1.5px solid var(--line); background: var(--surface); color: var(--text); font: inherit; cursor: pointer; }
+.opt[aria-pressed="true"] { border-color: var(--link); }
+.opt.right { border-color: #1e8e3e; background: rgba(30,142,62,.12); }
+.opt.wrong { border-color: #c5221f; background: rgba(197,34,31,.12); }
+.opt:disabled { cursor: default; }
+.explain { margin: 16px 0 0; padding: 14px 16px; border-radius: 12px; background: var(--bg); }
+.quiz-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 18px; }
+.score { font-size: 40px; font-weight: 800; margin: 8px 0; }

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ruktin-eng.github.io/settled/sitemap.xml
