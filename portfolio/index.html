@@ -173,7 +173,7 @@ h1 {
 }
 .mark .l1, .mark .l2 { position: absolute; top: 10cqw; font-size: 46cqw; letter-spacing: -0.04em; }
 .mark .l1 { left: 8cqw; color: var(--letter); z-index: 2; text-shadow: 0 1cqw 2cqw rgba(0,30,90,.25); }
-.mark .l2 { left: 39cqw; color: var(--blue); z-index: 2; }
+.mark .l2 { left: 39cqw; color: var(--blue); z-index: 2; -webkit-text-stroke: .5cqw #fff; paint-order: stroke fill; text-shadow: 0 .6cqw 1.6cqw rgba(0,20,60,.35); }
 .mark .tile {
   position: absolute; left: 37cqw; top: 6cqw; width: 52cqw; height: 72cqw; border-radius: 9cqw;
   background-size: cover; background-position: center; opacity: .3;
@@ -183,7 +183,7 @@ h1 {
     linear-gradient(172deg, #ffffff 0%, #dbe7f7 40%, #a9bfdc 100%);
 }
 .mark .tile.app { background-image: url("https://ruktin-eng.github.io/settled/icon.png"); opacity: .4; }
-.hero .mark .tile { background-image: url("photo.jpg"); background-position: 30% 55%; opacity: .5; }
+.hero .mark .tile { background-image: linear-gradient(rgba(6,24,64,.55), rgba(6,24,64,.55)), url("photo.jpg"); background-position: center, 30% 55%; opacity: .9; }
 .hero .mark {
   width: 210px; box-shadow: 0 8px 20px rgba(10,60,160,.3);
   -webkit-box-reflect: below 6px linear-gradient(transparent 62%, rgba(255,255,255,.28));
