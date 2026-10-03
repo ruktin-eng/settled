@@ -6,7 +6,7 @@
 <!-- DRAFT: keep out of search engines until you decide to launch. Remove this line to go public. -->
 <meta name="robots" content="noindex, nofollow">
 <title>Tinashe Rukasha – Portfolio</title>
-<meta name="description" content="Tinashe Rukasha: NHS clinical pharmacist, app builder and host of the Commercial Synopsis podcast.">
+<meta name="description" content="Tinashe Rukasha: NHS clinical pharmacist and aspiring commercial solicitor in life sciences, app builder and host of the Commercial Synopsis podcast.">
 <link rel="icon" href="../icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -169,6 +169,16 @@ h3 { margin: 0 0 4px; font-size: 18px; letter-spacing: -0.01em; }
 }
 .construction span { font-family: var(--pixel); font-size: 11px; background: #ffd400; color: #10131a; padding: 1px 8px; border: 2px solid #10131a; }
 
+/* Law */
+.law { display: grid; grid-template-columns: 1.1fr 1fr; gap: 26px; align-items: start; }
+.law .win-body p { margin: 0; }
+h3.big { font-size: 24px; letter-spacing: -0.02em; font-weight: 800; line-height: 1.15; margin: 2px 0 4px; }
+.skills4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 26px; }
+.skills4 .win { box-shadow: 4px 4px 0 var(--shadow); }
+.skills4 .win-body { padding: 16px; gap: 6px; }
+.skills4 .label { color: var(--accent); margin: 0; }
+.skills4 p { margin: 0; font-size: 14.5px; color: var(--muted); }
+
 /* Podcast */
 .podcast { display: grid; grid-template-columns: 1fr 1.25fr; gap: 26px; align-items: start; }
 .podcast iframe { width: 100%; border: 0; display: block; min-height: 352px; background: #000; }
@@ -199,11 +209,15 @@ h3 { margin: 0 0 4px; font-size: 18px; letter-spacing: -0.01em; }
 footer { padding: 8px 0 48px; font-family: var(--term); font-size: 19px; color: var(--muted); }
 footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
 
+@media (max-width: 900px) {
+  .skills4 { grid-template-columns: 1fr 1fr; }
+}
 @media (max-width: 720px) {
   .hero { margin-top: 28px; }
   .hero .win-body { grid-template-columns: 1fr; padding: 22px; gap: 22px; }
   .hero .mark { width: 150px; }
-  .podcast, .cv-cols { grid-template-columns: 1fr; }
+  .podcast, .cv-cols, .law { grid-template-columns: 1fr; }
+  .skills4 { grid-template-columns: 1fr 1fr; gap: 14px; }
   .timeline li { grid-template-columns: 1fr; gap: 0; }
   .menubar .wrap { height: auto; padding-top: 8px; padding-bottom: 8px; flex-wrap: wrap; }
   .menubar nav a { padding: 4px 6px; }
@@ -228,6 +242,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
   <div class="wrap">
     <a class="name" href="#top"><svg class="sprite" width="64" height="32" viewBox="0 0 16 8" aria-hidden="true" focusable="false"><rect x="3" y="0" width="10" height="1" style="fill:var(--text)"/><rect x="2" y="1" width="1" height="1" style="fill:var(--text)"/><rect x="3" y="1" width="5" height="1" style="fill:#0a84ff"/><rect x="8" y="1" width="5" height="1" style="fill:#ffffff"/><rect x="13" y="1" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="2" width="1" height="1" style="fill:var(--text)"/><rect x="2" y="2" width="1" height="1" style="fill:#0a84ff"/><rect x="3" y="2" width="2" height="1" style="fill:#ffffff"/><rect x="5" y="2" width="3" height="1" style="fill:#0a84ff"/><rect x="8" y="2" width="4" height="1" style="fill:#ffffff"/><rect x="12" y="2" width="2" height="1" style="fill:#d6dce6"/><rect x="14" y="2" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="3" width="1" height="1" style="fill:var(--text)"/><rect x="2" y="3" width="1" height="1" style="fill:#0a84ff"/><rect x="3" y="3" width="1" height="1" style="fill:#ffffff"/><rect x="4" y="3" width="4" height="1" style="fill:#0a84ff"/><rect x="8" y="3" width="5" height="1" style="fill:#ffffff"/><rect x="13" y="3" width="1" height="1" style="fill:#d6dce6"/><rect x="14" y="3" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="4" width="1" height="1" style="fill:var(--text)"/><rect x="2" y="4" width="6" height="1" style="fill:#0a84ff"/><rect x="8" y="4" width="5" height="1" style="fill:#ffffff"/><rect x="13" y="4" width="1" height="1" style="fill:#d6dce6"/><rect x="14" y="4" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="5" width="1" height="1" style="fill:var(--text)"/><rect x="2" y="5" width="1" height="1" style="fill:#0057c2"/><rect x="3" y="5" width="5" height="1" style="fill:#0a84ff"/><rect x="8" y="5" width="1" height="1" style="fill:#d6dce6"/><rect x="9" y="5" width="4" height="1" style="fill:#ffffff"/><rect x="13" y="5" width="1" height="1" style="fill:#d6dce6"/><rect x="14" y="5" width="1" height="1" style="fill:var(--text)"/><rect x="2" y="6" width="1" height="1" style="fill:var(--text)"/><rect x="3" y="6" width="5" height="1" style="fill:#0057c2"/><rect x="8" y="6" width="5" height="1" style="fill:#d6dce6"/><rect x="13" y="6" width="1" height="1" style="fill:var(--text)"/><rect x="3" y="7" width="10" height="1" style="fill:var(--text)"/></svg>Tinashe Rukasha</a>
     <nav>
+      <a href="#law">Law</a>
       <a href="#projects">Projects</a>
       <a href="#podcast">Podcast</a>
       <a href="#cv">CV</a>
@@ -243,11 +258,12 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
     <div class="win-body">
       <div class="mark" aria-hidden="true"><span class="l1">T</span><span class="tile"></span><span class="l2">R</span></div>
       <div>
-        <p class="eyebrow"><svg class="sprite" width="36" height="36" viewBox="0 0 9 9" aria-hidden="true" focusable="false"><rect x="4" y="0" width="1" height="1" style="fill:var(--text)"/><rect x="3" y="1" width="1" height="1" style="fill:var(--text)"/><rect x="4" y="1" width="1" height="1" style="fill:#ffd400"/><rect x="5" y="1" width="1" height="1" style="fill:var(--text)"/><rect x="3" y="2" width="1" height="1" style="fill:var(--text)"/><rect x="4" y="2" width="1" height="1" style="fill:#ffd400"/><rect x="5" y="2" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="3" width="3" height="1" style="fill:var(--text)"/><rect x="4" y="3" width="1" height="1" style="fill:#ffffff"/><rect x="5" y="3" width="3" height="1" style="fill:var(--text)"/><rect x="0" y="4" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="4" width="2" height="1" style="fill:#ffd400"/><rect x="3" y="4" width="3" height="1" style="fill:#ffffff"/><rect x="6" y="4" width="2" height="1" style="fill:#ffd400"/><rect x="8" y="4" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="5" width="3" height="1" style="fill:var(--text)"/><rect x="4" y="5" width="1" height="1" style="fill:#ffffff"/><rect x="5" y="5" width="3" height="1" style="fill:var(--text)"/><rect x="3" y="6" width="1" height="1" style="fill:var(--text)"/><rect x="4" y="6" width="1" height="1" style="fill:#ffd400"/><rect x="5" y="6" width="1" height="1" style="fill:var(--text)"/><rect x="3" y="7" width="1" height="1" style="fill:var(--text)"/><rect x="4" y="7" width="1" height="1" style="fill:#ffd400"/><rect x="5" y="7" width="1" height="1" style="fill:var(--text)"/><rect x="4" y="8" width="1" height="1" style="fill:var(--text)"/></svg>Clinical pharmacist · App builder · Podcaster</p>
+        <p class="eyebrow"><svg class="sprite" width="36" height="36" viewBox="0 0 9 9" aria-hidden="true" focusable="false"><rect x="4" y="0" width="1" height="1" style="fill:var(--text)"/><rect x="3" y="1" width="1" height="1" style="fill:var(--text)"/><rect x="4" y="1" width="1" height="1" style="fill:#ffd400"/><rect x="5" y="1" width="1" height="1" style="fill:var(--text)"/><rect x="3" y="2" width="1" height="1" style="fill:var(--text)"/><rect x="4" y="2" width="1" height="1" style="fill:#ffd400"/><rect x="5" y="2" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="3" width="3" height="1" style="fill:var(--text)"/><rect x="4" y="3" width="1" height="1" style="fill:#ffffff"/><rect x="5" y="3" width="3" height="1" style="fill:var(--text)"/><rect x="0" y="4" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="4" width="2" height="1" style="fill:#ffd400"/><rect x="3" y="4" width="3" height="1" style="fill:#ffffff"/><rect x="6" y="4" width="2" height="1" style="fill:#ffd400"/><rect x="8" y="4" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="5" width="3" height="1" style="fill:var(--text)"/><rect x="4" y="5" width="1" height="1" style="fill:#ffffff"/><rect x="5" y="5" width="3" height="1" style="fill:var(--text)"/><rect x="3" y="6" width="1" height="1" style="fill:var(--text)"/><rect x="4" y="6" width="1" height="1" style="fill:#ffd400"/><rect x="5" y="6" width="1" height="1" style="fill:var(--text)"/><rect x="3" y="7" width="1" height="1" style="fill:var(--text)"/><rect x="4" y="7" width="1" height="1" style="fill:#ffd400"/><rect x="5" y="7" width="1" height="1" style="fill:var(--text)"/><rect x="4" y="8" width="1" height="1" style="fill:var(--text)"/></svg>Clinical pharmacist · Aspiring solicitor · App builder · Podcaster</p>
         <h1>Hi, I’m Tinashe Rukasha.</h1>
-        <p class="lead">I’m an NHS clinical pharmacist in primary care with a first-class MPharm from Keele. I’m interested in how technology can reduce health inequalities and help people manage their own health, so I build apps and host a weekly podcast on business and current affairs.</p>
+        <p class="lead">I’m an NHS clinical pharmacist with a first-class MPharm from Keele, working towards a career as a commercial solicitor in life sciences. I’m interested in where medicines, technology and law meet, so I also build health apps and host a podcast on business and current affairs.</p>
         <div class="buttons">
-          <a class="btn" href="#projects">See my work</a>
+          <a class="btn" href="#law"><svg class="sprite" width="30" height="24" viewBox="0 0 15 12" aria-hidden="true" focusable="false"><rect x="7" y="0" width="1" height="1" style="fill:var(--text)"/><rect x="6" y="1" width="1" height="1" style="fill:var(--text)"/><rect x="7" y="1" width="1" height="1" style="fill:#0a84ff"/><rect x="8" y="1" width="1" height="1" style="fill:var(--text)"/><rect x="0" y="2" width="15" height="1" style="fill:var(--text)"/><rect x="1" y="3" width="1" height="1" style="fill:var(--text)"/><rect x="7" y="3" width="1" height="1" style="fill:var(--text)"/><rect x="13" y="3" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="4" width="1" height="1" style="fill:var(--text)"/><rect x="7" y="4" width="1" height="1" style="fill:var(--text)"/><rect x="13" y="4" width="1" height="1" style="fill:var(--text)"/><rect x="0" y="5" width="1" height="1" style="fill:var(--text)"/><rect x="2" y="5" width="1" height="1" style="fill:var(--text)"/><rect x="7" y="5" width="1" height="1" style="fill:var(--text)"/><rect x="12" y="5" width="1" height="1" style="fill:var(--text)"/><rect x="14" y="5" width="1" height="1" style="fill:var(--text)"/><rect x="0" y="6" width="1" height="1" style="fill:var(--text)"/><rect x="2" y="6" width="1" height="1" style="fill:var(--text)"/><rect x="7" y="6" width="1" height="1" style="fill:var(--text)"/><rect x="12" y="6" width="1" height="1" style="fill:var(--text)"/><rect x="14" y="6" width="1" height="1" style="fill:var(--text)"/><rect x="0" y="7" width="3" height="1" style="fill:#0a84ff"/><rect x="7" y="7" width="1" height="1" style="fill:var(--text)"/><rect x="12" y="7" width="3" height="1" style="fill:#0a84ff"/><rect x="1" y="8" width="1" height="1" style="fill:#0a84ff"/><rect x="7" y="8" width="1" height="1" style="fill:var(--text)"/><rect x="13" y="8" width="1" height="1" style="fill:#0a84ff"/><rect x="7" y="9" width="1" height="1" style="fill:var(--text)"/><rect x="6" y="10" width="3" height="1" style="fill:var(--text)"/><rect x="4" y="11" width="7" height="1" style="fill:var(--text)"/></svg>Law &amp; life sciences</a>
+          <a class="btn ghost" href="#projects">See my work</a>
           <a class="btn ghost" href="#cv" onclick="window.print(); return false;"><svg class="sprite" width="28" height="28" viewBox="0 0 14 14" aria-hidden="true" focusable="false"><rect x="0" y="0" width="13" height="1" style="fill:var(--text)"/><rect x="0" y="1" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="1" width="2" height="1" style="fill:#0a84ff"/><rect x="3" y="1" width="1" height="1" style="fill:var(--text)"/><rect x="4" y="1" width="5" height="1" style="fill:#d6dce6"/><rect x="9" y="1" width="1" height="1" style="fill:var(--text)"/><rect x="10" y="1" width="3" height="1" style="fill:#0a84ff"/><rect x="13" y="1" width="1" height="1" style="fill:var(--text)"/><rect x="0" y="2" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="2" width="2" height="1" style="fill:#0a84ff"/><rect x="3" y="2" width="1" height="1" style="fill:var(--text)"/><rect x="4" y="2" width="3" height="1" style="fill:#d6dce6"/><rect x="7" y="2" width="1" height="1" style="fill:var(--text)"/><rect x="8" y="2" width="1" height="1" style="fill:#d6dce6"/><rect x="9" y="2" width="1" height="1" style="fill:var(--text)"/><rect x="10" y="2" width="3" height="1" style="fill:#0a84ff"/><rect x="13" y="2" width="1" height="1" style="fill:var(--text)"/><rect x="0" y="3" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="3" width="2" height="1" style="fill:#0a84ff"/><rect x="3" y="3" width="1" height="1" style="fill:var(--text)"/><rect x="4" y="3" width="3" height="1" style="fill:#d6dce6"/><rect x="7" y="3" width="1" height="1" style="fill:var(--text)"/><rect x="8" y="3" width="1" height="1" style="fill:#d6dce6"/><rect x="9" y="3" width="1" height="1" style="fill:var(--text)"/><rect x="10" y="3" width="3" height="1" style="fill:#0a84ff"/><rect x="13" y="3" width="1" height="1" style="fill:var(--text)"/><rect x="0" y="4" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="4" width="2" height="1" style="fill:#0a84ff"/><rect x="3" y="4" width="7" height="1" style="fill:var(--text)"/><rect x="10" y="4" width="3" height="1" style="fill:#0a84ff"/><rect x="13" y="4" width="1" height="1" style="fill:var(--text)"/><rect x="0" y="5" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="5" width="12" height="1" style="fill:#0a84ff"/><rect x="13" y="5" width="1" height="1" style="fill:var(--text)"/><rect x="0" y="6" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="6" width="12" height="1" style="fill:#0a84ff"/><rect x="13" y="6" width="1" height="1" style="fill:var(--text)"/><rect x="0" y="7" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="7" width="1" height="1" style="fill:#0a84ff"/><rect x="2" y="7" width="10" height="1" style="fill:#ffffff"/><rect x="12" y="7" width="1" height="1" style="fill:#0a84ff"/><rect x="13" y="7" width="1" height="1" style="fill:var(--text)"/><rect x="0" y="8" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="8" width="1" height="1" style="fill:#0a84ff"/><rect x="2" y="8" width="1" height="1" style="fill:#ffffff"/><rect x="3" y="8" width="8" height="1" style="fill:var(--text)"/><rect x="11" y="8" width="1" height="1" style="fill:#ffffff"/><rect x="12" y="8" width="1" height="1" style="fill:#0a84ff"/><rect x="13" y="8" width="1" height="1" style="fill:var(--text)"/><rect x="0" y="9" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="9" width="1" height="1" style="fill:#0a84ff"/><rect x="2" y="9" width="10" height="1" style="fill:#ffffff"/><rect x="12" y="9" width="1" height="1" style="fill:#0a84ff"/><rect x="13" y="9" width="1" height="1" style="fill:var(--text)"/><rect x="0" y="10" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="10" width="1" height="1" style="fill:#0a84ff"/><rect x="2" y="10" width="1" height="1" style="fill:#ffffff"/><rect x="3" y="10" width="6" height="1" style="fill:var(--text)"/><rect x="9" y="10" width="3" height="1" style="fill:#ffffff"/><rect x="12" y="10" width="1" height="1" style="fill:#0a84ff"/><rect x="13" y="10" width="1" height="1" style="fill:var(--text)"/><rect x="0" y="11" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="11" width="1" height="1" style="fill:#0a84ff"/><rect x="2" y="11" width="10" height="1" style="fill:#ffffff"/><rect x="12" y="11" width="1" height="1" style="fill:#0a84ff"/><rect x="13" y="11" width="1" height="1" style="fill:var(--text)"/><rect x="0" y="12" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="12" width="1" height="1" style="fill:#0057c2"/><rect x="2" y="12" width="10" height="1" style="fill:#ffffff"/><rect x="12" y="12" width="1" height="1" style="fill:#0057c2"/><rect x="13" y="12" width="1" height="1" style="fill:var(--text)"/><rect x="0" y="13" width="14" height="1" style="fill:var(--text)"/></svg>Save CV</a>
         </div>
         <p class="status">C:\TINASHE&gt; based in Milton Keynes, UK <span class="cursor" aria-hidden="true"></span></p>
@@ -255,26 +271,87 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
     </div>
   </div>
 
+  <section id="law">
+    <h2><svg class="sprite" width="60" height="48" viewBox="0 0 15 12" aria-hidden="true" focusable="false"><rect x="7" y="0" width="1" height="1" style="fill:var(--text)"/><rect x="6" y="1" width="1" height="1" style="fill:var(--text)"/><rect x="7" y="1" width="1" height="1" style="fill:#0a84ff"/><rect x="8" y="1" width="1" height="1" style="fill:var(--text)"/><rect x="0" y="2" width="15" height="1" style="fill:var(--text)"/><rect x="1" y="3" width="1" height="1" style="fill:var(--text)"/><rect x="7" y="3" width="1" height="1" style="fill:var(--text)"/><rect x="13" y="3" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="4" width="1" height="1" style="fill:var(--text)"/><rect x="7" y="4" width="1" height="1" style="fill:var(--text)"/><rect x="13" y="4" width="1" height="1" style="fill:var(--text)"/><rect x="0" y="5" width="1" height="1" style="fill:var(--text)"/><rect x="2" y="5" width="1" height="1" style="fill:var(--text)"/><rect x="7" y="5" width="1" height="1" style="fill:var(--text)"/><rect x="12" y="5" width="1" height="1" style="fill:var(--text)"/><rect x="14" y="5" width="1" height="1" style="fill:var(--text)"/><rect x="0" y="6" width="1" height="1" style="fill:var(--text)"/><rect x="2" y="6" width="1" height="1" style="fill:var(--text)"/><rect x="7" y="6" width="1" height="1" style="fill:var(--text)"/><rect x="12" y="6" width="1" height="1" style="fill:var(--text)"/><rect x="14" y="6" width="1" height="1" style="fill:var(--text)"/><rect x="0" y="7" width="3" height="1" style="fill:#0a84ff"/><rect x="7" y="7" width="1" height="1" style="fill:var(--text)"/><rect x="12" y="7" width="3" height="1" style="fill:#0a84ff"/><rect x="1" y="8" width="1" height="1" style="fill:#0a84ff"/><rect x="7" y="8" width="1" height="1" style="fill:var(--text)"/><rect x="13" y="8" width="1" height="1" style="fill:#0a84ff"/><rect x="7" y="9" width="1" height="1" style="fill:var(--text)"/><rect x="6" y="10" width="3" height="1" style="fill:var(--text)"/><rect x="4" y="11" width="7" height="1" style="fill:var(--text)"/></svg>Law</h2>
+    <div class="law">
+      <div class="win law-main">
+        <div class="titlebar"><span class="box"></span><span class="title">ASPIRING_SOLICITOR.DOC</span><span class="box"></span></div>
+        <div class="win-body">
+          <span class="tag">Commercial law · Life sciences</span>
+          <h3 class="big">From the pharmacy to commercial law</h3>
+          <p>My interest in law started while studying pharmacy. Cases like the UK Supreme Court’s 2018 decision invalidating Pfizer’s second medical use patent for pregabalin, and laws like the Human Medicines Regulations 2012, showed me how much law shapes how medicines are developed, sold and regulated.</p>
+          <p>I want to become a commercial solicitor in the life sciences sector, working on the patents, regulation and deals that bring new treatments to patients. My clinical experience means I understand what those products mean for the people who use them.</p>
+          <p class="label">Areas I’m focused on</p>
+          <div class="chips">
+            <span>Intellectual property &amp; patents</span>
+            <span>Life sciences regulation</span>
+            <span>Unified Patent Court</span>
+            <span>Healthcare M&amp;A</span>
+            <span>Medical device regulation</span>
+            <span>Data protection</span>
+            <span>AI &amp; digital health</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="win">
+        <div class="titlebar"><span class="box"></span><span class="title">LEGAL_EXPERIENCE.LOG</span><span class="box"></span></div>
+        <div class="win-body">
+          <ul class="timeline">
+            <li>
+              <span class="when">Jun – Jul 2025</span>
+              <div>
+                <h3>Legal Intern, AstraZeneca with Eversheds Sutherland</h3>
+                <p class="org">Aspiring Solicitors legal internship · Cambridge</p>
+                <p>Worked with in-house and private practice lawyers, with exposure to intellectual property and patents. I co-presented to solicitors and partners on how legal teams handle AI, digital medicines, mRNA and cell and gene therapies, covering IP, cybersecurity and health regulation.</p>
+              </div>
+            </li>
+            <li>
+              <span class="when">Mentoring</span>
+              <div>
+                <h3>Covington &amp; Burling LLP and AstraZeneca</h3>
+                <p class="org">Mentoring scheme with practising solicitors</p>
+                <p>Insight into regulatory and life sciences legal work in both a global law firm and an in-house team.</p>
+              </div>
+            </li>
+            <li>
+              <span class="when">Workshop</span>
+              <div>
+                <h3>Intellectual property workshop</h3>
+                <p class="org">Bristows LLP</p>
+                <p>Explored patent litigation in life sciences and technology, including work before the Unified Patent Court.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="skills4">
+      <div class="win"><div class="win-body"><p class="label">01 · Clear communication</p><p>Explaining complex clinical information to patients, clinicians and the public every day.</p></div></div>
+      <div class="win"><div class="win-body"><p class="label">02 · Respectful challenge</p><p>Questioning prescribing decisions by senior clinicians while staying confident in my own judgement.</p></div></div>
+      <div class="win"><div class="win-body"><p class="label">03 · Collaboration</p><p>Building shared treatment plans with doctors, nurses and pharmacists from different backgrounds.</p></div></div>
+      <div class="win"><div class="win-body"><p class="label">04 · Commercial awareness</p><p>Weekly analysis of business and policy news on my podcast, <a href="#podcast">Commercial Synopsis</a>.</p></div></div>
+    </div>
+  </section>
+
   <section id="projects">
     <h2><svg class="sprite" width="40" height="60" viewBox="0 0 10 15" aria-hidden="true" focusable="false"><rect x="1" y="0" width="8" height="1" style="fill:var(--text)"/><rect x="0" y="1" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="1" width="8" height="1" style="fill:#9aa4b2"/><rect x="9" y="1" width="1" height="1" style="fill:var(--text)"/><rect x="0" y="2" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="2" width="1" height="1" style="fill:#9aa4b2"/><rect x="2" y="2" width="6" height="1" style="fill:var(--text)"/><rect x="8" y="2" width="1" height="1" style="fill:#9aa4b2"/><rect x="9" y="2" width="1" height="1" style="fill:var(--text)"/><rect x="0" y="3" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="3" width="1" height="1" style="fill:#9aa4b2"/><rect x="2" y="3" width="1" height="1" style="fill:var(--text)"/><rect x="3" y="3" width="4" height="1" style="fill:#0a84ff"/><rect x="7" y="3" width="1" height="1" style="fill:var(--text)"/><rect x="8" y="3" width="1" height="1" style="fill:#9aa4b2"/><rect x="9" y="3" width="1" height="1" style="fill:var(--text)"/><rect x="0" y="4" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="4" width="1" height="1" style="fill:#9aa4b2"/><rect x="2" y="4" width="1" height="1" style="fill:var(--text)"/><rect x="3" y="4" width="1" height="1" style="fill:#0a84ff"/><rect x="4" y="4" width="2" height="1" style="fill:#ffffff"/><rect x="6" y="4" width="1" height="1" style="fill:#0a84ff"/><rect x="7" y="4" width="1" height="1" style="fill:var(--text)"/><rect x="8" y="4" width="1" height="1" style="fill:#9aa4b2"/><rect x="9" y="4" width="1" height="1" style="fill:var(--text)"/><rect x="0" y="5" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="5" width="1" height="1" style="fill:#9aa4b2"/><rect x="2" y="5" width="1" height="1" style="fill:var(--text)"/><rect x="3" y="5" width="4" height="1" style="fill:#0a84ff"/><rect x="7" y="5" width="1" height="1" style="fill:var(--text)"/><rect x="8" y="5" width="1" height="1" style="fill:#9aa4b2"/><rect x="9" y="5" width="1" height="1" style="fill:var(--text)"/><rect x="0" y="6" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="6" width="1" height="1" style="fill:#9aa4b2"/><rect x="2" y="6" width="1" height="1" style="fill:var(--text)"/><rect x="3" y="6" width="1" height="1" style="fill:#0a84ff"/><rect x="4" y="6" width="1" height="1" style="fill:#ffffff"/><rect x="5" y="6" width="2" height="1" style="fill:#0a84ff"/><rect x="7" y="6" width="1" height="1" style="fill:var(--text)"/><rect x="8" y="6" width="1" height="1" style="fill:#9aa4b2"/><rect x="9" y="6" width="1" height="1" style="fill:var(--text)"/><rect x="0" y="7" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="7" width="1" height="1" style="fill:#9aa4b2"/><rect x="2" y="7" width="1" height="1" style="fill:var(--text)"/><rect x="3" y="7" width="4" height="1" style="fill:#0a84ff"/><rect x="7" y="7" width="1" height="1" style="fill:var(--text)"/><rect x="8" y="7" width="1" height="1" style="fill:#9aa4b2"/><rect x="9" y="7" width="1" height="1" style="fill:var(--text)"/><rect x="0" y="8" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="8" width="1" height="1" style="fill:#9aa4b2"/><rect x="2" y="8" width="1" height="1" style="fill:var(--text)"/><rect x="3" y="8" width="2" height="1" style="fill:#0a84ff"/><rect x="5" y="8" width="1" height="1" style="fill:#ffffff"/><rect x="6" y="8" width="1" height="1" style="fill:#0a84ff"/><rect x="7" y="8" width="1" height="1" style="fill:var(--text)"/><rect x="8" y="8" width="1" height="1" style="fill:#9aa4b2"/><rect x="9" y="8" width="1" height="1" style="fill:var(--text)"/><rect x="0" y="9" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="9" width="1" height="1" style="fill:#9aa4b2"/><rect x="2" y="9" width="1" height="1" style="fill:var(--text)"/><rect x="3" y="9" width="4" height="1" style="fill:#0a84ff"/><rect x="7" y="9" width="1" height="1" style="fill:var(--text)"/><rect x="8" y="9" width="1" height="1" style="fill:#9aa4b2"/><rect x="9" y="9" width="1" height="1" style="fill:var(--text)"/><rect x="0" y="10" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="10" width="1" height="1" style="fill:#9aa4b2"/><rect x="2" y="10" width="6" height="1" style="fill:var(--text)"/><rect x="8" y="10" width="1" height="1" style="fill:#9aa4b2"/><rect x="9" y="10" width="1" height="1" style="fill:var(--text)"/><rect x="0" y="11" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="11" width="8" height="1" style="fill:#9aa4b2"/><rect x="9" y="11" width="1" height="1" style="fill:var(--text)"/><rect x="0" y="12" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="12" width="3" height="1" style="fill:#9aa4b2"/><rect x="4" y="12" width="2" height="1" style="fill:var(--text)"/><rect x="6" y="12" width="3" height="1" style="fill:#9aa4b2"/><rect x="9" y="12" width="1" height="1" style="fill:var(--text)"/><rect x="0" y="13" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="13" width="8" height="1" style="fill:#9aa4b2"/><rect x="9" y="13" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="14" width="8" height="1" style="fill:var(--text)"/></svg>Projects</h2>
     <div class="grid">
 
-      <!-- CLINIGUIDE: placeholder. Replace the description, bullets and link with the real details,
-           then delete the "under construction" strip. -->
       <article class="win card">
         <div class="titlebar"><span class="box"></span><span class="title">CLINIGUIDE</span><span class="box"></span></div>
         <div class="win-body">
           <div class="mark" aria-hidden="true"><span class="l1">C</span><span class="tile"></span><span class="l2">G</span></div>
-          <span class="tag">Healthcare</span>
+          <span class="tag">iOS app · Healthcare</span>
           <h3>CliniGuide</h3>
-          <p>Short description of CliniGuide: the problem it solves, who uses it, and what you built.</p>
+          <p>A mobile app that brings prescribing guidelines into one searchable library for primary care clinicians.</p>
           <ul>
-            <li>Key feature or result</li>
-            <li>Key feature or result</li>
-            <li>Tech used</li>
+            <li>Built in Swift, with AI tools such as Claude Code</li>
+            <li>Designed around real primary care workflows</li>
+            <li>Taught me about copyright, data protection and medical device regulation</li>
           </ul>
-          <div class="construction"><span>Under construction</span></div>
-          <div class="links"><a class="btn ghost" href="#">Visit CliniGuide</a></div>
+          <div class="construction"><span>In development</span></div>
         </div>
       </article>
 
@@ -301,7 +378,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
           <div class="mark" aria-hidden="true"><span class="l1">C</span><span class="tile"></span><span class="l2">S</span></div>
           <span class="tag">Podcast</span>
           <h3>Commercial Synopsis</h3>
-          <p>A weekly podcast on Spotify where I break down the major commercial, political and economic stories of the week.</p>
+          <p>A podcast on Spotify, with 11 episodes so far, where I break down major commercial, political and economic stories.</p>
           <div class="links"><a class="btn ghost" href="https://open.spotify.com/show/4LJJU349OM7sP6eChqVRIF" target="_blank" rel="noopener">Listen on Spotify</a></div>
         </div>
       </article>
@@ -315,10 +392,10 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
       <div class="win">
         <div class="titlebar"><span class="box"></span><span class="title">README.TXT</span><span class="box"></span></div>
         <div class="win-body">
-          <span class="tag">Weekly · Spotify</span>
+          <span class="tag">11 episodes · Spotify</span>
           <h3>Commercial Synopsis</h3>
-          <p>Every week I pick the biggest stories in business, politics and the economy and explain what happened and why it matters.</p>
-          <p>I started the show to keep up with the commercial world beyond healthcare, especially life sciences, and to sharpen how I explain complex topics.</p>
+          <p>I pick big stories in business, politics and the economy and break them down into clear analysis: what happened, and why it matters.</p>
+          <p>Episodes have covered topics from DeepSeek’s disruption of the markets to tariffs straining gold supply chains. Making the show has built my commercial awareness, along with skills in audio editing, sound production and graphic design.</p>
           <div class="links" style="margin-top:8px"><a class="btn" href="https://open.spotify.com/show/4LJJU349OM7sP6eChqVRIF" target="_blank" rel="noopener"><svg class="sprite" width="24" height="28" viewBox="0 0 12 14" aria-hidden="true" focusable="false"><rect x="4" y="0" width="4" height="1" style="fill:var(--text)"/><rect x="3" y="1" width="1" height="1" style="fill:var(--text)"/><rect x="4" y="1" width="1" height="1" style="fill:#9aa4b2"/><rect x="5" y="1" width="1" height="1" style="fill:#d6dce6"/><rect x="6" y="1" width="1" height="1" style="fill:#ffffff"/><rect x="7" y="1" width="1" height="1" style="fill:#9aa4b2"/><rect x="8" y="1" width="1" height="1" style="fill:var(--text)"/><rect x="3" y="2" width="1" height="1" style="fill:var(--text)"/><rect x="4" y="2" width="4" height="1" style="fill:#9aa4b2"/><rect x="8" y="2" width="1" height="1" style="fill:var(--text)"/><rect x="3" y="3" width="1" height="1" style="fill:var(--text)"/><rect x="4" y="3" width="1" height="1" style="fill:#d6dce6"/><rect x="5" y="3" width="1" height="1" style="fill:#9aa4b2"/><rect x="6" y="3" width="1" height="1" style="fill:#d6dce6"/><rect x="7" y="3" width="1" height="1" style="fill:#9aa4b2"/><rect x="8" y="3" width="1" height="1" style="fill:var(--text)"/><rect x="3" y="4" width="1" height="1" style="fill:var(--text)"/><rect x="4" y="4" width="4" height="1" style="fill:#9aa4b2"/><rect x="8" y="4" width="1" height="1" style="fill:var(--text)"/><rect x="3" y="5" width="1" height="1" style="fill:var(--text)"/><rect x="4" y="5" width="1" height="1" style="fill:#9aa4b2"/><rect x="5" y="5" width="1" height="1" style="fill:#d6dce6"/><rect x="6" y="5" width="1" height="1" style="fill:#9aa4b2"/><rect x="7" y="5" width="1" height="1" style="fill:#d6dce6"/><rect x="8" y="5" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="6" width="1" height="1" style="fill:var(--text)"/><rect x="3" y="6" width="1" height="1" style="fill:var(--text)"/><rect x="4" y="6" width="4" height="1" style="fill:#9aa4b2"/><rect x="8" y="6" width="1" height="1" style="fill:var(--text)"/><rect x="10" y="6" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="7" width="1" height="1" style="fill:var(--text)"/><rect x="4" y="7" width="4" height="1" style="fill:var(--text)"/><rect x="10" y="7" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="8" width="2" height="1" style="fill:var(--text)"/><rect x="9" y="8" width="2" height="1" style="fill:var(--text)"/><rect x="2" y="9" width="2" height="1" style="fill:var(--text)"/><rect x="8" y="9" width="2" height="1" style="fill:var(--text)"/><rect x="4" y="10" width="4" height="1" style="fill:var(--text)"/><rect x="5" y="11" width="2" height="1" style="fill:var(--text)"/><rect x="5" y="12" width="2" height="1" style="fill:var(--text)"/><rect x="3" y="13" width="6" height="1" style="fill:var(--text)"/></svg>Open in Spotify</a></div>
         </div>
       </div>
@@ -351,7 +428,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
               <div>
                 <h3>Legal Intern</h3>
                 <p class="org">AstraZeneca / Eversheds Sutherland · Aspiring Solicitors</p>
-                <p>Co-presented to solicitors and partners on how life sciences legal teams are adapting to AI tools, mRNA and gene therapies.</p>
+                <p>In-house and private practice experience in life sciences law. <a href="#law">More in Law</a>.</p>
               </div>
             </li>
             <li>
@@ -427,6 +504,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
               <span>Kotlin</span>
               <span>Mobile app development</span>
               <span>Podcasting</span>
+              <span>Commercial awareness</span>
             </div>
             <p class="label">Languages</p>
             <div class="chips"><span>English (native)</span><span>Shona (native)</span></div>
@@ -443,7 +521,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
     <div class="win contact">
       <div class="titlebar"><span class="box"></span><span class="title">SAY HELLO</span><span class="box"></span></div>
       <div class="win-body">
-        <p>Open to digital health projects, collaborations and guest spots on the podcast. Based in Milton Keynes, UK.</p>
+        <p>Open to training contract opportunities in commercial law, digital health projects and guest spots on the podcast. Based in Milton Keynes, UK.</p>
         <div class="buttons">
           <a class="btn" href="mailto:rukashatinashe12@gmail.com"><svg class="sprite" width="32" height="20" viewBox="0 0 16 10" aria-hidden="true" focusable="false"><rect x="0" y="0" width="16" height="1" style="fill:var(--text)"/><rect x="0" y="1" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="1" width="1" height="1" style="fill:#0a84ff"/><rect x="2" y="1" width="1" height="1" style="fill:var(--text)"/><rect x="3" y="1" width="10" height="1" style="fill:#ffffff"/><rect x="13" y="1" width="1" height="1" style="fill:var(--text)"/><rect x="14" y="1" width="1" height="1" style="fill:#0a84ff"/><rect x="15" y="1" width="1" height="1" style="fill:var(--text)"/><rect x="0" y="2" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="2" width="1" height="1" style="fill:#ffffff"/><rect x="2" y="2" width="1" height="1" style="fill:#0a84ff"/><rect x="3" y="2" width="1" height="1" style="fill:var(--text)"/><rect x="4" y="2" width="8" height="1" style="fill:#ffffff"/><rect x="12" y="2" width="1" height="1" style="fill:var(--text)"/><rect x="13" y="2" width="1" height="1" style="fill:#0a84ff"/><rect x="14" y="2" width="1" height="1" style="fill:#ffffff"/><rect x="15" y="2" width="1" height="1" style="fill:var(--text)"/><rect x="0" y="3" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="3" width="2" height="1" style="fill:#ffffff"/><rect x="3" y="3" width="1" height="1" style="fill:#0a84ff"/><rect x="4" y="3" width="1" height="1" style="fill:var(--text)"/><rect x="5" y="3" width="6" height="1" style="fill:#ffffff"/><rect x="11" y="3" width="1" height="1" style="fill:var(--text)"/><rect x="12" y="3" width="1" height="1" style="fill:#0a84ff"/><rect x="13" y="3" width="2" height="1" style="fill:#ffffff"/><rect x="15" y="3" width="1" height="1" style="fill:var(--text)"/><rect x="0" y="4" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="4" width="3" height="1" style="fill:#ffffff"/><rect x="4" y="4" width="1" height="1" style="fill:#0a84ff"/><rect x="5" y="4" width="1" height="1" style="fill:var(--text)"/><rect x="6" y="4" width="4" height="1" style="fill:#ffffff"/><rect x="10" y="4" width="1" height="1" style="fill:var(--text)"/><rect x="11" y="4" width="1" height="1" style="fill:#0a84ff"/><rect x="12" y="4" width="3" height="1" style="fill:#ffffff"/><rect x="15" y="4" width="1" height="1" style="fill:var(--text)"/><rect x="0" y="5" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="5" width="4" height="1" style="fill:#ffffff"/><rect x="5" y="5" width="1" height="1" style="fill:#0a84ff"/><rect x="6" y="5" width="4" height="1" style="fill:var(--text)"/><rect x="10" y="5" width="1" height="1" style="fill:#0a84ff"/><rect x="11" y="5" width="4" height="1" style="fill:#ffffff"/><rect x="15" y="5" width="1" height="1" style="fill:var(--text)"/><rect x="0" y="6" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="6" width="5" height="1" style="fill:#ffffff"/><rect x="6" y="6" width="4" height="1" style="fill:#0a84ff"/><rect x="10" y="6" width="5" height="1" style="fill:#ffffff"/><rect x="15" y="6" width="1" height="1" style="fill:var(--text)"/><rect x="0" y="7" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="7" width="14" height="1" style="fill:#ffffff"/><rect x="15" y="7" width="1" height="1" style="fill:var(--text)"/><rect x="0" y="8" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="8" width="14" height="1" style="fill:#ffffff"/><rect x="15" y="8" width="1" height="1" style="fill:var(--text)"/><rect x="0" y="9" width="16" height="1" style="fill:var(--text)"/></svg>Email me</a>
           <a class="btn ghost" href="https://www.linkedin.com/in/tinashe-rodney-r-045826149/" target="_blank" rel="noopener">LinkedIn</a>
