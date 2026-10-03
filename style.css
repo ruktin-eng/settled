@@ -102,3 +102,10 @@ nav { flex-wrap: wrap; gap: 4px 16px; }
 .explain { margin: 16px 0 0; padding: 14px 16px; border-radius: 12px; background: var(--bg); }
 .quiz-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 18px; }
 .score { font-size: 40px; font-weight: 800; margin: 8px 0; }
+
+/* App store badges */
+.stores { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin: 20px 0 8px; }
+.store { display: inline-flex; flex-direction: column; justify-content: center; min-width: 170px; padding: 8px 18px; border-radius: 12px; background: #000; color: #fff; text-decoration: none; font-weight: 700; font-size: 20px; line-height: 1.15; }
+.store small { font-size: 12px; font-weight: 500; opacity: .85; }
+.store[aria-disabled="true"] { opacity: .6; cursor: default; }
+@media (prefers-color-scheme: dark) { .store { background: #fff; color: #000; } }
