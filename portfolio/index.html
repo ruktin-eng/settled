@@ -637,15 +637,15 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
 </footer>
 
 <script>
-// Quick play: drive the Spotify embed through Spotify's iFrame API.
-// If the API can't load, the button opens the show on Spotify instead.
+// Quick play: plays the latest episode right here on the page by driving
+// the Spotify embed through Spotify's iFrame API.
 (function () {
-  var SHOW = "https://open.spotify.com/show/4LJJU349OM7sP6eChqVRIF";
   var btn = document.getElementById("quickplay");
   var state = document.getElementById("wmp-state");
   var fill = document.getElementById("wmp-fill");
   var time = document.getElementById("wmp-time");
   var controller = null;
+  var pending = false;
 
   function fmt(ms) {
     var s = Math.floor(ms / 1000);
@@ -664,6 +664,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
     host.appendChild(el);
     IFrameAPI.createController(el, { uri: "spotify:show:4LJJU349OM7sP6eChqVRIF", width: "100%", height: 352 }, function (c) {
       controller = c;
+      if (pending) { pending = false; c.play(); }
       c.addListener("playback_update", function (e) {
         var d = e.data;
         setPlaying(!d.isPaused);
@@ -676,8 +677,11 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
   };
 
   btn.addEventListener("click", function () {
-    if (controller) controller.togglePlay();
-    else window.open(SHOW, "_blank", "noopener");
+    if (controller) { controller.togglePlay(); return; }
+    // Player still loading: start as soon as it's ready.
+    pending = true;
+    state.textContent = "Loading…";
+    document.getElementById("spotify-embed").scrollIntoView({ behavior: "smooth", block: "nearest" });
   });
 
   var api = document.createElement("script");
