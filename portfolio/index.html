@@ -26,6 +26,8 @@
   --accent-soft: #e2edff;
   --letter: #f5f7ff;
   --heading: #0b3fa5;
+  --veil: rgba(238,241,245,.84);
+  --stripe-a: rgba(227,232,239,.55);
   --font: Tahoma, Verdana, "Segoe UI", Geneva, sans-serif;
   --display: "Trebuchet MS", "Lucida Grande", Tahoma, sans-serif;
   --mono: "Lucida Console", Consolas, "Courier New", monospace;
@@ -42,13 +44,23 @@
     --accent: #79b0ff;
     --accent-soft: #15284a;
     --heading: #8dbbff;
+    --veil: rgba(12,19,34,.88);
+    --stripe-a: rgba(16,26,46,.6);
   }
 }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
   margin: 0; color: var(--text);
-  background: repeating-linear-gradient(180deg, var(--page) 0 2px, var(--stripe) 2px 4px);
+  background-color: var(--page);
+  /* Faint "desktop wallpaper" photo under Aqua pinstripes */
+  background-image:
+    repeating-linear-gradient(180deg, transparent 0 2px, var(--stripe-a) 2px 4px),
+    linear-gradient(var(--veil), var(--veil)),
+    url("photo.jpg");
+  background-size: auto, auto, cover;
+  background-position: 0 0, 0 0, center 60%;
+  background-attachment: scroll, scroll, fixed;
   font: 15px/1.6 var(--font);
 }
 a { color: var(--accent); }
@@ -171,6 +183,7 @@ h1 {
     linear-gradient(172deg, #ffffff 0%, #dbe7f7 40%, #a9bfdc 100%);
 }
 .mark .tile.app { background-image: url("https://ruktin-eng.github.io/settled/icon.png"); opacity: .4; }
+.hero .mark .tile { background-image: url("photo.jpg"); background-position: 30% 55%; opacity: .5; }
 .hero .mark {
   width: 210px; box-shadow: 0 8px 20px rgba(10,60,160,.3);
   -webkit-box-reflect: below 6px linear-gradient(transparent 62%, rgba(255,255,255,.28));
@@ -394,9 +407,9 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
             <li>
               <span class="when">2026 <span class="now">Now</span></span>
               <div>
-                <h3>Bristows LLP with Aspiring Solicitors</h3>
-                <p class="org">Aspiring Solicitors programme · Bristows LLP</p>
-                <p>Taking part this year with Bristows, a firm known for intellectual property work in life sciences and technology, including patent cases at the Unified Patent Court.</p>
+                <h3>Bristows LLP mentoring scheme</h3>
+                <p class="org">Bristows LLP with Aspiring Solicitors</p>
+                <p>Being mentored this year by lawyers at Bristows, a firm known for intellectual property work in life sciences and technology, including patent cases at the Unified Patent Court.</p>
               </div>
             </li>
             <li>
