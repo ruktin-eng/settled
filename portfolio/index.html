@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- DRAFT: keep out of search engines until you decide to launch. Remove this line to go public. -->
+<meta name="robots" content="noindex, nofollow">
+<title>Your Name – Portfolio</title>
+<meta name="description" content="Digital CV: projects, podcast and experience.">
+<link rel="icon" href="../icon.png">
+<style>
+:root {
+  --bg: #f6f5f1;
+  --surface: #ffffff;
+  --text: #17191e;
+  --muted: #5c6370;
+  --accent: #0b6e5f;
+  --accent-soft: #e2f1ee;
+  --line: #e2e0d8;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #101214;
+    --surface: #181b1f;
+    --text: #e9ebee;
+    --muted: #a3a9b3;
+    --accent: #4fc2ac;
+    --accent-soft: #15302b;
+    --line: #2a2f36;
+  }
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 17px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+a { color: var(--accent); }
+.wrap { max-width: 920px; margin: 0 auto; padding: 0 16px; }
+
+/* Nav */
+.nav {
+  position: sticky; top: 0; z-index: 10;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+.nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 12px; padding-bottom: 12px; }
+.nav .name { font-weight: 700; text-decoration: none; color: var(--text); }
+.nav nav { display: flex; gap: 16px; flex-wrap: wrap; }
+.nav nav a { color: var(--muted); text-decoration: none; font-size: 15px; }
+.nav nav a:hover { color: var(--accent); }
+
+/* Hero */
+.hero { padding: 72px 0 48px; display: grid; grid-template-columns: auto 1fr; gap: 32px; align-items: center; }
+.avatar {
+  width: 132px; height: 132px; border-radius: 50%;
+  background: var(--accent-soft); color: var(--accent);
+  display: grid; place-items: center; font-size: 44px; font-weight: 700;
+  object-fit: cover;
+}
+.eyebrow { color: var(--accent); font-weight: 600; letter-spacing: .04em; text-transform: uppercase; font-size: 13px; margin: 0 0 6px; }
+h1 { font-size: clamp(32px, 6vw, 48px); line-height: 1.1; margin: 0 0 12px; }
+.lead { color: var(--muted); font-size: 19px; margin: 0 0 20px; max-width: 60ch; }
+.buttons { display: flex; gap: 10px; flex-wrap: wrap; }
+.btn {
+  display: inline-block; padding: 10px 18px; border-radius: 999px;
+  background: var(--accent); color: #fff; text-decoration: none; font-weight: 600; font-size: 15px;
+}
+.btn.ghost { background: transparent; color: var(--accent); border: 1.5px solid var(--accent); }
+
+section { padding: 40px 0; border-top: 1px solid var(--line); }
+h2 { font-size: 26px; margin: 0 0 20px; }
+h3 { margin: 0 0 4px; font-size: 19px; }
+
+/* Project cards */
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+.card {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
+  padding: 22px; display: flex; flex-direction: column; gap: 10px;
+}
+.card .tag { align-self: flex-start; background: var(--accent-soft); color: var(--accent); font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 999px; }
+.card p { margin: 0; color: var(--muted); font-size: 15.5px; }
+.card ul { margin: 0; padding-left: 18px; color: var(--muted); font-size: 15px; }
+.card .links { margin-top: auto; display: flex; gap: 14px; font-size: 15px; font-weight: 600; }
+.card img.logo { width: 48px; height: 48px; border-radius: 11px; }
+
+/* Podcast */
+.podcast { display: grid; grid-template-columns: 1fr 1.3fr; gap: 24px; align-items: start; }
+.podcast iframe { width: 100%; border: 0; border-radius: 12px; min-height: 352px; }
+
+/* Timeline */
+.timeline { list-style: none; margin: 0; padding: 0; }
+.timeline li { display: grid; grid-template-columns: 150px 1fr; gap: 16px; padding: 14px 0; border-bottom: 1px dashed var(--line); }
+.timeline li:last-child { border-bottom: 0; }
+.when { color: var(--muted); font-size: 14px; padding-top: 3px; }
+.timeline .org { color: var(--muted); font-size: 15px; margin: 0 0 6px; }
+.timeline p { margin: 0; font-size: 15.5px; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chips span { background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: 5px 12px; font-size: 14px; }
+.cv-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+
+footer { padding: 32px 0 48px; color: var(--muted); font-size: 14px; border-top: 1px solid var(--line); }
+
+@media (max-width: 680px) {
+  .hero { grid-template-columns: 1fr; padding-top: 40px; text-align: left; }
+  .avatar { width: 96px; height: 96px; font-size: 32px; }
+  .podcast, .cv-cols { grid-template-columns: 1fr; }
+  .timeline li { grid-template-columns: 1fr; gap: 2px; }
+  .nav nav { gap: 12px; }
+}
+@media print {
+  .nav, .buttons, .podcast iframe { display: none; }
+  body { background: #fff; color: #000; }
+  section { break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="name" href="#top">Your Name</a>
+    <nav>
+      <a href="#projects">Projects</a>
+      <a href="#podcast">Podcast</a>
+      <a href="#cv">CV</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap" id="top">
+
+  <!-- HERO — replace name, title and summary. For a photo, swap the div for:
+       <img class="avatar" src="photo.jpg" alt="Your Name"> -->
+  <div class="hero">
+    <div class="avatar" aria-hidden="true">YN</div>
+    <div>
+      <p class="eyebrow">Your title · e.g. Healthcare professional &amp; app builder</p>
+      <h1>Hi, I’m Your Name.</h1>
+      <p class="lead">One or two sentences about who you are and what you care about. For example: I build practical tools that help people through healthcare and life admin, and I host a podcast about [topic].</p>
+      <div class="buttons">
+        <a class="btn" href="#projects">See my work</a>
+        <a class="btn ghost" href="cv.pdf" download>Download CV</a>
+      </div>
+    </div>
+  </div>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="grid">
+
+      <article class="card">
+        <span class="tag">Healthcare</span>
+        <h3>CliniGuide</h3>
+        <!-- Replace with what CliniGuide does, who it's for and your role -->
+        <p>Short description of CliniGuide: the problem it solves, who uses it, and what you built.</p>
+        <ul>
+          <li>Key feature or result</li>
+          <li>Key feature or result</li>
+          <li>Tech or skills used</li>
+        </ul>
+        <div class="links">
+          <a href="#">Visit CliniGuide →</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <img class="logo" src="../icon.png" alt="Settled app icon">
+        <span class="tag">Mobile app · Education</span>
+        <h3>Settled</h3>
+        <p>A study app and free website for the UK’s Life in the UK test, with mock tests, chapter practice and plain-English explanations.</p>
+        <ul>
+          <li>Over 1,200 original questions, each with an explanation</li>
+          <li>Timed mock tests that mirror the real exam (24 questions, 45 minutes)</li>
+          <li>Readiness score, review list and offline progress on iPhone and Android</li>
+          <li>Free web practice: 300 questions and chapter summaries</li>
+        </ul>
+        <div class="links">
+          <a href="../index.html">Visit Settled →</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <span class="tag">Podcast</span>
+        <h3>Podcast name</h3>
+        <p>What the show is about and who it’s for. Mention the guests, themes or number of episodes.</p>
+        <div class="links">
+          <a href="https://open.spotify.com/show/4LJJU349OM7sP6eChqVRIF" target="_blank" rel="noopener">Listen on Spotify →</a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section id="podcast">
+    <h2>Listen to the podcast</h2>
+    <div class="podcast">
+      <div>
+        <h3>Podcast name</h3>
+        <p>A longer intro to the show: why you started it, what listeners get from it, and how often new episodes come out.</p>
+        <p><a class="btn ghost" href="https://open.spotify.com/show/4LJJU349OM7sP6eChqVRIF" target="_blank" rel="noopener">Open in Spotify</a></p>
+      </div>
+      <iframe title="Podcast on Spotify" src="https://open.spotify.com/embed/show/4LJJU349OM7sP6eChqVRIF" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+    </div>
+  </section>
+
+  <section id="cv">
+    <h2>CV</h2>
+    <div class="cv-cols">
+      <div>
+        <h3 style="margin-bottom:8px">Experience</h3>
+        <ul class="timeline">
+          <li>
+            <span class="when">2025 – now</span>
+            <div>
+              <h3>Founder &amp; developer</h3>
+              <p class="org">Settled</p>
+              <p>Designed and built a Life in the UK test app for iPhone and Android, plus a free study website.</p>
+            </div>
+          </li>
+          <li>
+            <span class="when">Year – Year</span>
+            <div>
+              <h3>Role title</h3>
+              <p class="org">CliniGuide</p>
+              <p>What you did and the impact it had.</p>
+            </div>
+          </li>
+          <li>
+            <span class="when">Year – Year</span>
+            <div>
+              <h3>Role title</h3>
+              <p class="org">Organisation</p>
+              <p>What you did and the impact it had.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="margin-bottom:8px">Education</h3>
+        <ul class="timeline">
+          <li>
+            <span class="when">Year – Year</span>
+            <div>
+              <h3>Qualification</h3>
+              <p class="org">Institution</p>
+            </div>
+          </li>
+        </ul>
+        <h3 style="margin:24px 0 12px">Skills</h3>
+        <div class="chips">
+          <span>App development</span>
+          <span>Product design</span>
+          <span>Content writing</span>
+          <span>Podcasting</span>
+          <span>Skill</span>
+          <span>Skill</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Get in touch</h2>
+    <p>Open to collaborations, guest spots on the podcast and new opportunities.</p>
+    <div class="buttons">
+      <a class="btn" href="mailto:you@example.com">Email me</a>
+      <a class="btn ghost" href="#">LinkedIn</a>
+      <a class="btn ghost" href="https://github.com/ruktin-eng">GitHub</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">© 2026 Your Name</div>
+</footer>
+
+</body>
+</html>
