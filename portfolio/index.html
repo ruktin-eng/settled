@@ -8,123 +8,225 @@
 <title>Tinashe Rukasha – Portfolio</title>
 <meta name="description" content="Tinashe Rukasha: NHS clinical pharmacist, app builder and host of the Commercial Synopsis podcast.">
 <link rel="icon" href="../icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Silkscreen:wght@400;700&family=VT323&display=swap">
 <style>
 :root {
-  --bg: #f6f5f1;
+  --bg: #e9eef7;
+  --dot: #c3cee2;
   --surface: #ffffff;
-  --text: #17191e;
-  --muted: #5c6370;
-  --accent: #1f4fbf;
-  --accent-soft: #e6edfb;
-  --on-accent: #ffffff;
-  --line: #e2e0d8;
+  --text: #10131a;
+  --muted: #4d5566;
+  --ink: #10131a;
+  --shadow: #10131a;
+  --blue: #0a84ff;
+  --blue-dark: #0057c2;
+  --accent: #0a6fe0;
+  --accent-soft: #dcebff;
+  --letter: #f5f7ff;
+  --on-blue: #ffffff;
+  --pixel: "Silkscreen", "Courier New", monospace;
+  --term: "VT323", "Courier New", monospace;
 }
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #101214;
-    --surface: #181b1f;
-    --text: #e9ebee;
-    --muted: #a3a9b3;
-    --accent: #8fb0ff;
-    --accent-soft: #18233d;
-    --on-accent: #0e1730;
-    --line: #2a2f36;
+    --bg: #0a0f1c;
+    --dot: #1a2440;
+    --surface: #131a2c;
+    --text: #e8ecf4;
+    --muted: #a6b0c3;
+    --ink: #7f93ba;
+    --shadow: #000000;
+    --accent: #59a8ff;
+    --accent-soft: #10264a;
   }
 }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
   margin: 0;
-  background: var(--bg);
   color: var(--text);
-  font: 17px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--bg);
+  background-image: radial-gradient(var(--dot) 1px, transparent 1.2px);
+  background-size: 6px 6px;
+  font: 16.5px/1.65 Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 a { color: var(--accent); }
-.wrap { max-width: 920px; margin: 0 auto; padding: 0 16px; }
+.wrap { max-width: 980px; margin: 0 auto; padding: 0 16px; }
+svg.sprite { image-rendering: pixelated; shape-rendering: crispEdges; flex: none; }
 
-/* Nav */
-.nav {
+/* ---------- Menu bar ---------- */
+.menubar {
   position: sticky; top: 0; z-index: 10;
-  background: color-mix(in srgb, var(--bg) 88%, transparent);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid var(--line);
+  background: var(--surface); border-bottom: 2px solid var(--ink);
+  font-family: var(--pixel); font-size: 13px;
 }
-.nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 12px; padding-bottom: 12px; }
-.nav .name { font-weight: 700; text-decoration: none; color: var(--text); }
-.nav nav { display: flex; gap: 16px; flex-wrap: wrap; }
-.nav nav a { color: var(--muted); text-decoration: none; font-size: 15px; }
-.nav nav a:hover { color: var(--accent); }
+.menubar .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; height: 44px; }
+.menubar .name { display: flex; align-items: center; gap: 8px; color: var(--text); text-decoration: none; font-weight: 700; }
+.menubar nav { display: flex; gap: 2px; flex-wrap: wrap; }
+.menubar nav a { color: var(--text); text-decoration: none; padding: 4px 8px; }
+.menubar nav a:hover, .menubar nav a:focus-visible { background: var(--blue); color: var(--on-blue); outline: none; }
 
-/* Hero */
-.hero { padding: 72px 0 48px; display: grid; grid-template-columns: auto 1fr; gap: 32px; align-items: center; }
-.avatar {
-  width: 132px; height: 132px; border-radius: 50%;
-  background: var(--accent-soft); color: var(--accent);
-  display: grid; place-items: center; font-size: 44px; font-weight: 700;
-  object-fit: cover;
+/* ---------- Windows ---------- */
+.win {
+  background: var(--surface); border: 2px solid var(--ink);
+  box-shadow: 6px 6px 0 var(--shadow);
+  display: flex; flex-direction: column;
 }
-.eyebrow { color: var(--accent); font-weight: 600; letter-spacing: .04em; text-transform: uppercase; font-size: 13px; margin: 0 0 6px; }
-h1 { font-size: clamp(32px, 6vw, 48px); line-height: 1.1; margin: 0 0 12px; }
-.lead { color: var(--muted); font-size: 19px; margin: 0 0 20px; max-width: 60ch; }
-.buttons { display: flex; gap: 10px; flex-wrap: wrap; }
+.titlebar {
+  display: flex; align-items: center; gap: 8px; padding: 4px 6px; height: 28px;
+  border-bottom: 2px solid var(--ink);
+  background: repeating-linear-gradient(180deg, var(--blue) 0 2px, var(--surface) 2px 4px);
+  font-family: var(--pixel); font-size: 12px; font-weight: 700; letter-spacing: .04em;
+}
+.titlebar .box { width: 14px; height: 14px; border: 2px solid var(--ink); background: var(--surface); flex: none; }
+.titlebar .title {
+  margin: 0 auto; padding: 0 10px; background: var(--surface); color: var(--text);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.win-body { padding: 22px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+
+/* ---------- Buttons ---------- */
 .btn {
-  display: inline-block; padding: 10px 18px; border-radius: 999px;
-  background: var(--accent); color: var(--on-accent); text-decoration: none; font-weight: 600; font-size: 15px;
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--pixel); font-size: 13px; text-decoration: none; letter-spacing: .02em;
+  padding: 10px 16px; border: 2px solid var(--ink);
+  background: var(--blue); color: var(--on-blue);
+  box-shadow: inset -3px -3px 0 rgba(0,0,0,.28), inset 3px 3px 0 rgba(255,255,255,.4), 4px 4px 0 var(--shadow);
+  cursor: pointer;
 }
-.btn.ghost { background: transparent; color: var(--accent); border: 1.5px solid var(--accent); }
+.btn.ghost { background: var(--surface); color: var(--text); box-shadow: inset -3px -3px 0 rgba(0,0,0,.12), inset 3px 3px 0 rgba(255,255,255,.6), 4px 4px 0 var(--shadow); }
+.btn:hover { filter: brightness(1.06); }
+.btn:active { transform: translate(3px, 3px); box-shadow: inset 3px 3px 0 rgba(0,0,0,.28), 1px 1px 0 var(--shadow); }
+.btn:focus-visible { outline: 2px dashed var(--accent); outline-offset: 4px; }
+.buttons { display: flex; gap: 14px; flex-wrap: wrap; }
 
-section { padding: 40px 0; border-top: 1px solid var(--line); }
-h2 { font-size: 26px; margin: 0 0 20px; }
-h3 { margin: 0 0 4px; font-size: 19px; }
-
-/* Project cards */
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
-.card {
-  background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
-  padding: 22px; display: flex; flex-direction: column; gap: 10px;
+/* ---------- Hero ---------- */
+.hero { margin: 48px 0 56px; }
+.hero .win-body { display: grid; grid-template-columns: auto 1fr; gap: 32px; align-items: center; padding: 32px; }
+.eyebrow { font-family: var(--pixel); color: var(--accent); font-size: 12px; letter-spacing: .06em; margin: 0 0 10px; display: flex; align-items: center; gap: 8px; }
+h1 {
+  font-size: clamp(34px, 6vw, 54px); line-height: 1.02; letter-spacing: -0.035em; font-weight: 800; margin: 0 0 14px;
+  text-shadow: 3px 3px 0 var(--blue);
 }
-.card .tag { align-self: flex-start; background: var(--accent-soft); color: var(--accent); font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 999px; }
-.card p { margin: 0; color: var(--muted); font-size: 15.5px; }
-.card ul { margin: 0; padding-left: 18px; color: var(--muted); font-size: 15px; }
-.card .links { margin-top: auto; display: flex; gap: 14px; font-size: 15px; font-weight: 600; }
-.card img.logo { width: 48px; height: 48px; border-radius: 11px; }
+.lead { color: var(--muted); font-size: 18px; margin: 0 0 22px; max-width: 58ch; }
+.status { font-family: var(--term); font-size: 20px; color: var(--muted); margin: 18px 0 0; }
+.cursor { display: inline-block; width: 10px; height: 18px; background: var(--blue); vertical-align: -3px; animation: blink 1s steps(1) infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+
+/* ---------- Monogram sprite ---------- */
+.mark {
+  position: relative; overflow: hidden; container-type: inline-size;
+  background: var(--blue); aspect-ratio: 8 / 7; border: 2px solid var(--ink);
+  font-family: Inter, Helvetica, Arial, sans-serif; font-weight: 700; line-height: 1;
+}
+.mark .l1, .mark .l2 { position: absolute; top: 10cqw; font-size: 46cqw; letter-spacing: -0.04em; }
+.mark .l1 { left: 8cqw; color: var(--letter); }
+.mark .l2 { left: 39cqw; color: var(--blue); z-index: 2; }
+.mark .tile {
+  position: absolute; left: 37cqw; top: 6cqw; width: 52cqw; height: 72cqw; border-radius: 9cqw;
+  background-size: cover; background-position: center;
+  background-image:
+    repeating-linear-gradient(90deg, rgba(255,255,255,.1) 0 1px, transparent 1px 7px),
+    repeating-linear-gradient(0deg, rgba(255,214,140,.16) 0 1px, transparent 1px 8px),
+    linear-gradient(172deg, #d3e1f2 0%, #8aa3c3 30%, #3b4c66 62%, #141b27 100%);
+}
+.mark .tile.app { background-image: url("../icon.png"); }
+.hero .mark { width: 210px; box-shadow: 4px 4px 0 var(--shadow); }
+.card .mark { width: auto; aspect-ratio: 16 / 9; margin: -22px -22px 6px; border: 0; border-bottom: 2px solid var(--ink); }
+.card .mark .l1, .card .mark .l2 { top: 8cqw; font-size: 38cqw; }
+.card .mark .l1 { left: 13cqw; }
+.card .mark .l2 { left: 42cqw; }
+.card .mark .tile { left: 40cqw; top: 5cqw; width: 38cqw; height: 52cqw; border-radius: 7cqw; }
+
+/* ---------- Sections ---------- */
+section { padding: 28px 0 44px; }
+h2 {
+  display: flex; align-items: center; gap: 12px;
+  font-family: var(--pixel); font-weight: 700; font-size: 26px; letter-spacing: .01em; margin: 0 0 24px;
+}
+h2::after { content: ""; flex: 1; height: 6px; margin-left: 4px; background: repeating-linear-gradient(90deg, var(--ink) 0 6px, transparent 6px 10px); opacity: .5; }
+h3 { margin: 0 0 4px; font-size: 18px; letter-spacing: -0.01em; }
+
+/* Project windows */
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 26px; }
+.card { transition: transform .12s, box-shadow .12s; }
+.card:hover { transform: translate(-2px, -2px); box-shadow: 8px 8px 0 var(--shadow); }
+.tag {
+  align-self: flex-start; font-family: var(--pixel); font-size: 11px; letter-spacing: .04em;
+  background: var(--accent-soft); color: var(--accent); border: 2px solid currentColor; padding: 2px 8px;
+}
+.card p { margin: 0; color: var(--muted); font-size: 15px; }
+.card ul { margin: 0; padding-left: 0; list-style: none; color: var(--muted); font-size: 14.5px; }
+.card li { padding-left: 18px; position: relative; margin: 2px 0; }
+.card li::before { content: ""; position: absolute; left: 2px; top: .62em; width: 6px; height: 6px; background: var(--blue); }
+.card .links { margin-top: auto; padding-top: 8px; }
+.construction {
+  display: flex; align-items: center; justify-content: center; height: 30px; margin: 0 -22px;
+  background: repeating-linear-gradient(45deg, #ffd400 0 12px, #10131a 12px 24px);
+  border-top: 2px solid var(--ink); border-bottom: 2px solid var(--ink);
+}
+.construction span { font-family: var(--pixel); font-size: 11px; background: #ffd400; color: #10131a; padding: 1px 8px; border: 2px solid #10131a; }
 
 /* Podcast */
-.podcast { display: grid; grid-template-columns: 1fr 1.3fr; gap: 24px; align-items: start; }
-.podcast iframe { width: 100%; border: 0; border-radius: 12px; min-height: 352px; }
+.podcast { display: grid; grid-template-columns: 1fr 1.25fr; gap: 26px; align-items: start; }
+.podcast iframe { width: 100%; border: 0; display: block; min-height: 352px; background: #000; }
+.podcast .win-body p { margin: 0; }
+.player .win-body { padding: 0; }
 
-/* Timeline */
+/* CV */
+.cv-cols { display: grid; grid-template-columns: 1.15fr 1fr; gap: 26px; align-items: start; }
+.side { display: flex; flex-direction: column; gap: 26px; }
 .timeline { list-style: none; margin: 0; padding: 0; }
-.timeline li { display: grid; grid-template-columns: 150px 1fr; gap: 16px; padding: 14px 0; border-bottom: 1px dashed var(--line); }
-.timeline li:last-child { border-bottom: 0; }
-.when { color: var(--muted); font-size: 14px; padding-top: 3px; }
-.timeline .org { color: var(--muted); font-size: 15px; margin: 0 0 6px; }
-.timeline p { margin: 0; font-size: 15.5px; }
+.timeline li { display: grid; grid-template-columns: 128px 1fr; gap: 14px; padding: 14px 0; border-bottom: 2px dotted var(--dot); }
+.timeline li:first-child { padding-top: 0; }
+.timeline li:last-child { border-bottom: 0; padding-bottom: 0; }
+.when { font-family: var(--term); font-size: 19px; line-height: 1.2; color: var(--accent); padding-top: 2px; }
+.timeline .org { color: var(--muted); font-size: 14.5px; margin: 0 0 6px; }
+.timeline p { margin: 0; font-size: 15px; }
 .chips { display: flex; flex-wrap: wrap; gap: 8px; }
-.chips span { background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: 5px 12px; font-size: 14px; }
-.cv-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+.chips span {
+  background: var(--surface); border: 2px solid var(--ink); padding: 3px 10px; font-size: 13.5px;
+  box-shadow: 2px 2px 0 var(--shadow);
+}
+.label { font-family: var(--pixel); font-size: 13px; margin: 6px 0 2px; }
 
-footer { padding: 32px 0 48px; color: var(--muted); font-size: 14px; border-top: 1px solid var(--line); }
+/* Contact */
+.contact .win-body { flex-direction: row; align-items: center; gap: 22px; flex-wrap: wrap; }
+.contact p { margin: 0; flex: 1 1 260px; }
 
-@media (max-width: 680px) {
-  .hero { grid-template-columns: 1fr; padding-top: 40px; text-align: left; }
-  .avatar { width: 96px; height: 96px; font-size: 32px; }
+footer { padding: 8px 0 48px; font-family: var(--term); font-size: 19px; color: var(--muted); }
+footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+
+@media (max-width: 720px) {
+  .hero { margin-top: 28px; }
+  .hero .win-body { grid-template-columns: 1fr; padding: 22px; gap: 22px; }
+  .hero .mark { width: 150px; }
   .podcast, .cv-cols { grid-template-columns: 1fr; }
-  .timeline li { grid-template-columns: 1fr; gap: 2px; }
-  .nav nav { gap: 12px; }
+  .timeline li { grid-template-columns: 1fr; gap: 0; }
+  .menubar .wrap { height: auto; padding-top: 8px; padding-bottom: 8px; flex-wrap: wrap; }
+  .menubar nav a { padding: 4px 6px; }
+  h2 { font-size: 21px; }
+  .win { box-shadow: 4px 4px 0 var(--shadow); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cursor { animation: none; }
+  .card, .btn { transition: none; }
 }
 @media print {
-  .nav, .buttons, .podcast iframe { display: none; }
+  .menubar, .buttons, .player, .status, .construction { display: none; }
   body { background: #fff; color: #000; }
+  .win { box-shadow: none; }
   section { break-inside: avoid; }
 }
 </style>
 </head>
 <body>
 
-<header class="nav">
+<header class="menubar">
   <div class="wrap">
-    <a class="name" href="#top">Tinashe Rukasha</a>
+    <a class="name" href="#top"><svg class="sprite" width="64" height="32" viewBox="0 0 16 8" aria-hidden="true" focusable="false"><rect x="3" y="0" width="10" height="1" style="fill:var(--text)"/><rect x="2" y="1" width="1" height="1" style="fill:var(--text)"/><rect x="3" y="1" width="5" height="1" style="fill:#0a84ff"/><rect x="8" y="1" width="5" height="1" style="fill:#ffffff"/><rect x="13" y="1" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="2" width="1" height="1" style="fill:var(--text)"/><rect x="2" y="2" width="1" height="1" style="fill:#0a84ff"/><rect x="3" y="2" width="2" height="1" style="fill:#ffffff"/><rect x="5" y="2" width="3" height="1" style="fill:#0a84ff"/><rect x="8" y="2" width="4" height="1" style="fill:#ffffff"/><rect x="12" y="2" width="2" height="1" style="fill:#d6dce6"/><rect x="14" y="2" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="3" width="1" height="1" style="fill:var(--text)"/><rect x="2" y="3" width="1" height="1" style="fill:#0a84ff"/><rect x="3" y="3" width="1" height="1" style="fill:#ffffff"/><rect x="4" y="3" width="4" height="1" style="fill:#0a84ff"/><rect x="8" y="3" width="5" height="1" style="fill:#ffffff"/><rect x="13" y="3" width="1" height="1" style="fill:#d6dce6"/><rect x="14" y="3" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="4" width="1" height="1" style="fill:var(--text)"/><rect x="2" y="4" width="6" height="1" style="fill:#0a84ff"/><rect x="8" y="4" width="5" height="1" style="fill:#ffffff"/><rect x="13" y="4" width="1" height="1" style="fill:#d6dce6"/><rect x="14" y="4" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="5" width="1" height="1" style="fill:var(--text)"/><rect x="2" y="5" width="1" height="1" style="fill:#0057c2"/><rect x="3" y="5" width="5" height="1" style="fill:#0a84ff"/><rect x="8" y="5" width="1" height="1" style="fill:#d6dce6"/><rect x="9" y="5" width="4" height="1" style="fill:#ffffff"/><rect x="13" y="5" width="1" height="1" style="fill:#d6dce6"/><rect x="14" y="5" width="1" height="1" style="fill:var(--text)"/><rect x="2" y="6" width="1" height="1" style="fill:var(--text)"/><rect x="3" y="6" width="5" height="1" style="fill:#0057c2"/><rect x="8" y="6" width="5" height="1" style="fill:#d6dce6"/><rect x="13" y="6" width="1" height="1" style="fill:var(--text)"/><rect x="3" y="7" width="10" height="1" style="fill:var(--text)"/></svg>Tinashe Rukasha</a>
     <nav>
       <a href="#projects">Projects</a>
       <a href="#podcast">Podcast</a>
@@ -136,61 +238,71 @@ footer { padding: 32px 0 48px; color: var(--muted); font-size: 14px; border-top:
 
 <main class="wrap" id="top">
 
-  <!-- For a photo, swap the div for: <img class="avatar" src="photo.jpg" alt="Tinashe Rukasha"> -->
-  <div class="hero">
-    <div class="avatar" aria-hidden="true">TR</div>
-    <div>
-      <p class="eyebrow">Clinical pharmacist · App builder · Podcaster</p>
-      <h1>Hi, I’m Tinashe Rukasha.</h1>
-      <p class="lead">I’m an NHS clinical pharmacist in primary care with a first-class MPharm from Keele. I’m interested in how technology can reduce health inequalities and help people manage their own health, so I build apps and host a weekly podcast on business and current affairs.</p>
-      <div class="buttons">
-        <a class="btn" href="#projects">See my work</a>
-        <a class="btn ghost" href="#cv" onclick="window.print(); return false;">Save CV as PDF</a>
+  <div class="win hero">
+    <div class="titlebar"><span class="box"></span><span class="title">WELCOME.APP</span><span class="box"></span></div>
+    <div class="win-body">
+      <div class="mark" aria-hidden="true"><span class="l1">T</span><span class="tile"></span><span class="l2">R</span></div>
+      <div>
+        <p class="eyebrow"><svg class="sprite" width="36" height="36" viewBox="0 0 9 9" aria-hidden="true" focusable="false"><rect x="4" y="0" width="1" height="1" style="fill:var(--text)"/><rect x="3" y="1" width="1" height="1" style="fill:var(--text)"/><rect x="4" y="1" width="1" height="1" style="fill:#ffd400"/><rect x="5" y="1" width="1" height="1" style="fill:var(--text)"/><rect x="3" y="2" width="1" height="1" style="fill:var(--text)"/><rect x="4" y="2" width="1" height="1" style="fill:#ffd400"/><rect x="5" y="2" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="3" width="3" height="1" style="fill:var(--text)"/><rect x="4" y="3" width="1" height="1" style="fill:#ffffff"/><rect x="5" y="3" width="3" height="1" style="fill:var(--text)"/><rect x="0" y="4" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="4" width="2" height="1" style="fill:#ffd400"/><rect x="3" y="4" width="3" height="1" style="fill:#ffffff"/><rect x="6" y="4" width="2" height="1" style="fill:#ffd400"/><rect x="8" y="4" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="5" width="3" height="1" style="fill:var(--text)"/><rect x="4" y="5" width="1" height="1" style="fill:#ffffff"/><rect x="5" y="5" width="3" height="1" style="fill:var(--text)"/><rect x="3" y="6" width="1" height="1" style="fill:var(--text)"/><rect x="4" y="6" width="1" height="1" style="fill:#ffd400"/><rect x="5" y="6" width="1" height="1" style="fill:var(--text)"/><rect x="3" y="7" width="1" height="1" style="fill:var(--text)"/><rect x="4" y="7" width="1" height="1" style="fill:#ffd400"/><rect x="5" y="7" width="1" height="1" style="fill:var(--text)"/><rect x="4" y="8" width="1" height="1" style="fill:var(--text)"/></svg>Clinical pharmacist · App builder · Podcaster</p>
+        <h1>Hi, I’m Tinashe Rukasha.</h1>
+        <p class="lead">I’m an NHS clinical pharmacist in primary care with a first-class MPharm from Keele. I’m interested in how technology can reduce health inequalities and help people manage their own health, so I build apps and host a weekly podcast on business and current affairs.</p>
+        <div class="buttons">
+          <a class="btn" href="#projects">See my work</a>
+          <a class="btn ghost" href="#cv" onclick="window.print(); return false;"><svg class="sprite" width="28" height="28" viewBox="0 0 14 14" aria-hidden="true" focusable="false"><rect x="0" y="0" width="13" height="1" style="fill:var(--text)"/><rect x="0" y="1" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="1" width="2" height="1" style="fill:#0a84ff"/><rect x="3" y="1" width="1" height="1" style="fill:var(--text)"/><rect x="4" y="1" width="5" height="1" style="fill:#d6dce6"/><rect x="9" y="1" width="1" height="1" style="fill:var(--text)"/><rect x="10" y="1" width="3" height="1" style="fill:#0a84ff"/><rect x="13" y="1" width="1" height="1" style="fill:var(--text)"/><rect x="0" y="2" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="2" width="2" height="1" style="fill:#0a84ff"/><rect x="3" y="2" width="1" height="1" style="fill:var(--text)"/><rect x="4" y="2" width="3" height="1" style="fill:#d6dce6"/><rect x="7" y="2" width="1" height="1" style="fill:var(--text)"/><rect x="8" y="2" width="1" height="1" style="fill:#d6dce6"/><rect x="9" y="2" width="1" height="1" style="fill:var(--text)"/><rect x="10" y="2" width="3" height="1" style="fill:#0a84ff"/><rect x="13" y="2" width="1" height="1" style="fill:var(--text)"/><rect x="0" y="3" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="3" width="2" height="1" style="fill:#0a84ff"/><rect x="3" y="3" width="1" height="1" style="fill:var(--text)"/><rect x="4" y="3" width="3" height="1" style="fill:#d6dce6"/><rect x="7" y="3" width="1" height="1" style="fill:var(--text)"/><rect x="8" y="3" width="1" height="1" style="fill:#d6dce6"/><rect x="9" y="3" width="1" height="1" style="fill:var(--text)"/><rect x="10" y="3" width="3" height="1" style="fill:#0a84ff"/><rect x="13" y="3" width="1" height="1" style="fill:var(--text)"/><rect x="0" y="4" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="4" width="2" height="1" style="fill:#0a84ff"/><rect x="3" y="4" width="7" height="1" style="fill:var(--text)"/><rect x="10" y="4" width="3" height="1" style="fill:#0a84ff"/><rect x="13" y="4" width="1" height="1" style="fill:var(--text)"/><rect x="0" y="5" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="5" width="12" height="1" style="fill:#0a84ff"/><rect x="13" y="5" width="1" height="1" style="fill:var(--text)"/><rect x="0" y="6" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="6" width="12" height="1" style="fill:#0a84ff"/><rect x="13" y="6" width="1" height="1" style="fill:var(--text)"/><rect x="0" y="7" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="7" width="1" height="1" style="fill:#0a84ff"/><rect x="2" y="7" width="10" height="1" style="fill:#ffffff"/><rect x="12" y="7" width="1" height="1" style="fill:#0a84ff"/><rect x="13" y="7" width="1" height="1" style="fill:var(--text)"/><rect x="0" y="8" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="8" width="1" height="1" style="fill:#0a84ff"/><rect x="2" y="8" width="1" height="1" style="fill:#ffffff"/><rect x="3" y="8" width="8" height="1" style="fill:var(--text)"/><rect x="11" y="8" width="1" height="1" style="fill:#ffffff"/><rect x="12" y="8" width="1" height="1" style="fill:#0a84ff"/><rect x="13" y="8" width="1" height="1" style="fill:var(--text)"/><rect x="0" y="9" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="9" width="1" height="1" style="fill:#0a84ff"/><rect x="2" y="9" width="10" height="1" style="fill:#ffffff"/><rect x="12" y="9" width="1" height="1" style="fill:#0a84ff"/><rect x="13" y="9" width="1" height="1" style="fill:var(--text)"/><rect x="0" y="10" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="10" width="1" height="1" style="fill:#0a84ff"/><rect x="2" y="10" width="1" height="1" style="fill:#ffffff"/><rect x="3" y="10" width="6" height="1" style="fill:var(--text)"/><rect x="9" y="10" width="3" height="1" style="fill:#ffffff"/><rect x="12" y="10" width="1" height="1" style="fill:#0a84ff"/><rect x="13" y="10" width="1" height="1" style="fill:var(--text)"/><rect x="0" y="11" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="11" width="1" height="1" style="fill:#0a84ff"/><rect x="2" y="11" width="10" height="1" style="fill:#ffffff"/><rect x="12" y="11" width="1" height="1" style="fill:#0a84ff"/><rect x="13" y="11" width="1" height="1" style="fill:var(--text)"/><rect x="0" y="12" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="12" width="1" height="1" style="fill:#0057c2"/><rect x="2" y="12" width="10" height="1" style="fill:#ffffff"/><rect x="12" y="12" width="1" height="1" style="fill:#0057c2"/><rect x="13" y="12" width="1" height="1" style="fill:var(--text)"/><rect x="0" y="13" width="14" height="1" style="fill:var(--text)"/></svg>Save CV</a>
+        </div>
+        <p class="status">C:\TINASHE&gt; based in Milton Keynes, UK <span class="cursor" aria-hidden="true"></span></p>
       </div>
     </div>
   </div>
 
   <section id="projects">
-    <h2>Projects</h2>
+    <h2><svg class="sprite" width="40" height="60" viewBox="0 0 10 15" aria-hidden="true" focusable="false"><rect x="1" y="0" width="8" height="1" style="fill:var(--text)"/><rect x="0" y="1" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="1" width="8" height="1" style="fill:#9aa4b2"/><rect x="9" y="1" width="1" height="1" style="fill:var(--text)"/><rect x="0" y="2" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="2" width="1" height="1" style="fill:#9aa4b2"/><rect x="2" y="2" width="6" height="1" style="fill:var(--text)"/><rect x="8" y="2" width="1" height="1" style="fill:#9aa4b2"/><rect x="9" y="2" width="1" height="1" style="fill:var(--text)"/><rect x="0" y="3" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="3" width="1" height="1" style="fill:#9aa4b2"/><rect x="2" y="3" width="1" height="1" style="fill:var(--text)"/><rect x="3" y="3" width="4" height="1" style="fill:#0a84ff"/><rect x="7" y="3" width="1" height="1" style="fill:var(--text)"/><rect x="8" y="3" width="1" height="1" style="fill:#9aa4b2"/><rect x="9" y="3" width="1" height="1" style="fill:var(--text)"/><rect x="0" y="4" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="4" width="1" height="1" style="fill:#9aa4b2"/><rect x="2" y="4" width="1" height="1" style="fill:var(--text)"/><rect x="3" y="4" width="1" height="1" style="fill:#0a84ff"/><rect x="4" y="4" width="2" height="1" style="fill:#ffffff"/><rect x="6" y="4" width="1" height="1" style="fill:#0a84ff"/><rect x="7" y="4" width="1" height="1" style="fill:var(--text)"/><rect x="8" y="4" width="1" height="1" style="fill:#9aa4b2"/><rect x="9" y="4" width="1" height="1" style="fill:var(--text)"/><rect x="0" y="5" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="5" width="1" height="1" style="fill:#9aa4b2"/><rect x="2" y="5" width="1" height="1" style="fill:var(--text)"/><rect x="3" y="5" width="4" height="1" style="fill:#0a84ff"/><rect x="7" y="5" width="1" height="1" style="fill:var(--text)"/><rect x="8" y="5" width="1" height="1" style="fill:#9aa4b2"/><rect x="9" y="5" width="1" height="1" style="fill:var(--text)"/><rect x="0" y="6" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="6" width="1" height="1" style="fill:#9aa4b2"/><rect x="2" y="6" width="1" height="1" style="fill:var(--text)"/><rect x="3" y="6" width="1" height="1" style="fill:#0a84ff"/><rect x="4" y="6" width="1" height="1" style="fill:#ffffff"/><rect x="5" y="6" width="2" height="1" style="fill:#0a84ff"/><rect x="7" y="6" width="1" height="1" style="fill:var(--text)"/><rect x="8" y="6" width="1" height="1" style="fill:#9aa4b2"/><rect x="9" y="6" width="1" height="1" style="fill:var(--text)"/><rect x="0" y="7" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="7" width="1" height="1" style="fill:#9aa4b2"/><rect x="2" y="7" width="1" height="1" style="fill:var(--text)"/><rect x="3" y="7" width="4" height="1" style="fill:#0a84ff"/><rect x="7" y="7" width="1" height="1" style="fill:var(--text)"/><rect x="8" y="7" width="1" height="1" style="fill:#9aa4b2"/><rect x="9" y="7" width="1" height="1" style="fill:var(--text)"/><rect x="0" y="8" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="8" width="1" height="1" style="fill:#9aa4b2"/><rect x="2" y="8" width="1" height="1" style="fill:var(--text)"/><rect x="3" y="8" width="2" height="1" style="fill:#0a84ff"/><rect x="5" y="8" width="1" height="1" style="fill:#ffffff"/><rect x="6" y="8" width="1" height="1" style="fill:#0a84ff"/><rect x="7" y="8" width="1" height="1" style="fill:var(--text)"/><rect x="8" y="8" width="1" height="1" style="fill:#9aa4b2"/><rect x="9" y="8" width="1" height="1" style="fill:var(--text)"/><rect x="0" y="9" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="9" width="1" height="1" style="fill:#9aa4b2"/><rect x="2" y="9" width="1" height="1" style="fill:var(--text)"/><rect x="3" y="9" width="4" height="1" style="fill:#0a84ff"/><rect x="7" y="9" width="1" height="1" style="fill:var(--text)"/><rect x="8" y="9" width="1" height="1" style="fill:#9aa4b2"/><rect x="9" y="9" width="1" height="1" style="fill:var(--text)"/><rect x="0" y="10" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="10" width="1" height="1" style="fill:#9aa4b2"/><rect x="2" y="10" width="6" height="1" style="fill:var(--text)"/><rect x="8" y="10" width="1" height="1" style="fill:#9aa4b2"/><rect x="9" y="10" width="1" height="1" style="fill:var(--text)"/><rect x="0" y="11" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="11" width="8" height="1" style="fill:#9aa4b2"/><rect x="9" y="11" width="1" height="1" style="fill:var(--text)"/><rect x="0" y="12" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="12" width="3" height="1" style="fill:#9aa4b2"/><rect x="4" y="12" width="2" height="1" style="fill:var(--text)"/><rect x="6" y="12" width="3" height="1" style="fill:#9aa4b2"/><rect x="9" y="12" width="1" height="1" style="fill:var(--text)"/><rect x="0" y="13" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="13" width="8" height="1" style="fill:#9aa4b2"/><rect x="9" y="13" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="14" width="8" height="1" style="fill:var(--text)"/></svg>Projects</h2>
     <div class="grid">
 
-      <!-- CLINIGUIDE: placeholder. Replace the description, bullets and link with the real details. -->
-      <article class="card">
-        <span class="tag">Healthcare</span>
-        <h3>CliniGuide</h3>
-        <p>Short description of CliniGuide: the problem it solves, who uses it, and what you built.</p>
-        <ul>
-          <li>Key feature or result</li>
-          <li>Key feature or result</li>
-          <li>Tech used</li>
-        </ul>
-        <div class="links">
-          <a href="#">Visit CliniGuide →</a>
+      <!-- CLINIGUIDE: placeholder. Replace the description, bullets and link with the real details,
+           then delete the "under construction" strip. -->
+      <article class="win card">
+        <div class="titlebar"><span class="box"></span><span class="title">CLINIGUIDE</span><span class="box"></span></div>
+        <div class="win-body">
+          <div class="mark" aria-hidden="true"><span class="l1">C</span><span class="tile"></span><span class="l2">G</span></div>
+          <span class="tag">Healthcare</span>
+          <h3>CliniGuide</h3>
+          <p>Short description of CliniGuide: the problem it solves, who uses it, and what you built.</p>
+          <ul>
+            <li>Key feature or result</li>
+            <li>Key feature or result</li>
+            <li>Tech used</li>
+          </ul>
+          <div class="construction"><span>Under construction</span></div>
+          <div class="links"><a class="btn ghost" href="#">Visit CliniGuide</a></div>
         </div>
       </article>
 
-      <article class="card">
-        <img class="logo" src="../icon.png" alt="Settled app icon">
-        <span class="tag">Mobile app · Education</span>
-        <h3>Settled</h3>
-        <p>A study app and free website for the UK’s Life in the UK test, with mock tests, chapter practice and plain-English explanations.</p>
-        <ul>
-          <li>Over 1,200 original questions, each with an explanation</li>
-          <li>Timed mock tests that mirror the real exam (24 questions, 45 minutes)</li>
-          <li>Readiness score, review list and offline progress on iPhone and Android</li>
-          <li>Free web practice: 300 questions and chapter summaries</li>
-        </ul>
-        <div class="links">
-          <a href="../index.html">Visit Settled →</a>
+      <article class="win card">
+        <div class="titlebar"><span class="box"></span><span class="title">SETTLED</span><span class="box"></span></div>
+        <div class="win-body">
+          <div class="mark" aria-hidden="true"><span class="l1">S</span><span class="tile app"></span></div>
+          <span class="tag">Mobile app · Education</span>
+          <h3>Settled</h3>
+          <p>A study app and free website for the UK’s Life in the UK test, with mock tests, chapter practice and plain-English explanations.</p>
+          <ul>
+            <li>Over 1,200 original questions, each with an explanation</li>
+            <li>Timed mock tests that mirror the real exam (24 questions, 45 minutes)</li>
+            <li>Readiness score, review list and offline progress on iPhone and Android</li>
+            <li>Free web practice: 300 questions and chapter summaries</li>
+          </ul>
+          <div class="links"><a class="btn ghost" href="../index.html">Visit Settled</a></div>
         </div>
       </article>
 
-      <article class="card">
-        <span class="tag">Podcast</span>
-        <h3>Commercial Synopsis</h3>
-        <p>A weekly podcast on Spotify where I break down the major commercial, political and economic stories of the week.</p>
-        <div class="links">
-          <a href="https://open.spotify.com/show/4LJJU349OM7sP6eChqVRIF" target="_blank" rel="noopener">Listen on Spotify →</a>
+      <article class="win card">
+        <div class="titlebar"><span class="box"></span><span class="title">COMMERCIAL SYNOPSIS</span><span class="box"></span></div>
+        <div class="win-body">
+          <div class="mark" aria-hidden="true"><span class="l1">C</span><span class="tile"></span><span class="l2">S</span></div>
+          <span class="tag">Podcast</span>
+          <h3>Commercial Synopsis</h3>
+          <p>A weekly podcast on Spotify where I break down the major commercial, political and economic stories of the week.</p>
+          <div class="links"><a class="btn ghost" href="https://open.spotify.com/show/4LJJU349OM7sP6eChqVRIF" target="_blank" rel="noopener">Listen on Spotify</a></div>
         </div>
       </article>
 
@@ -198,135 +310,153 @@ footer { padding: 32px 0 48px; color: var(--muted); font-size: 14px; border-top:
   </section>
 
   <section id="podcast">
-    <h2>Listen to Commercial Synopsis</h2>
+    <h2><svg class="sprite" width="48" height="56" viewBox="0 0 12 14" aria-hidden="true" focusable="false"><rect x="4" y="0" width="4" height="1" style="fill:var(--text)"/><rect x="3" y="1" width="1" height="1" style="fill:var(--text)"/><rect x="4" y="1" width="1" height="1" style="fill:#9aa4b2"/><rect x="5" y="1" width="1" height="1" style="fill:#d6dce6"/><rect x="6" y="1" width="1" height="1" style="fill:#ffffff"/><rect x="7" y="1" width="1" height="1" style="fill:#9aa4b2"/><rect x="8" y="1" width="1" height="1" style="fill:var(--text)"/><rect x="3" y="2" width="1" height="1" style="fill:var(--text)"/><rect x="4" y="2" width="4" height="1" style="fill:#9aa4b2"/><rect x="8" y="2" width="1" height="1" style="fill:var(--text)"/><rect x="3" y="3" width="1" height="1" style="fill:var(--text)"/><rect x="4" y="3" width="1" height="1" style="fill:#d6dce6"/><rect x="5" y="3" width="1" height="1" style="fill:#9aa4b2"/><rect x="6" y="3" width="1" height="1" style="fill:#d6dce6"/><rect x="7" y="3" width="1" height="1" style="fill:#9aa4b2"/><rect x="8" y="3" width="1" height="1" style="fill:var(--text)"/><rect x="3" y="4" width="1" height="1" style="fill:var(--text)"/><rect x="4" y="4" width="4" height="1" style="fill:#9aa4b2"/><rect x="8" y="4" width="1" height="1" style="fill:var(--text)"/><rect x="3" y="5" width="1" height="1" style="fill:var(--text)"/><rect x="4" y="5" width="1" height="1" style="fill:#9aa4b2"/><rect x="5" y="5" width="1" height="1" style="fill:#d6dce6"/><rect x="6" y="5" width="1" height="1" style="fill:#9aa4b2"/><rect x="7" y="5" width="1" height="1" style="fill:#d6dce6"/><rect x="8" y="5" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="6" width="1" height="1" style="fill:var(--text)"/><rect x="3" y="6" width="1" height="1" style="fill:var(--text)"/><rect x="4" y="6" width="4" height="1" style="fill:#9aa4b2"/><rect x="8" y="6" width="1" height="1" style="fill:var(--text)"/><rect x="10" y="6" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="7" width="1" height="1" style="fill:var(--text)"/><rect x="4" y="7" width="4" height="1" style="fill:var(--text)"/><rect x="10" y="7" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="8" width="2" height="1" style="fill:var(--text)"/><rect x="9" y="8" width="2" height="1" style="fill:var(--text)"/><rect x="2" y="9" width="2" height="1" style="fill:var(--text)"/><rect x="8" y="9" width="2" height="1" style="fill:var(--text)"/><rect x="4" y="10" width="4" height="1" style="fill:var(--text)"/><rect x="5" y="11" width="2" height="1" style="fill:var(--text)"/><rect x="5" y="12" width="2" height="1" style="fill:var(--text)"/><rect x="3" y="13" width="6" height="1" style="fill:var(--text)"/></svg>Podcast</h2>
     <div class="podcast">
-      <div>
-        <h3>Commercial Synopsis</h3>
-        <p>Every week I pick the biggest stories in business, politics and the economy and explain what happened and why it matters. I started the show to keep up with the commercial world beyond healthcare, especially life sciences, and to sharpen how I explain complex topics.</p>
-        <p><a class="btn ghost" href="https://open.spotify.com/show/4LJJU349OM7sP6eChqVRIF" target="_blank" rel="noopener">Open in Spotify</a></p>
+      <div class="win">
+        <div class="titlebar"><span class="box"></span><span class="title">README.TXT</span><span class="box"></span></div>
+        <div class="win-body">
+          <span class="tag">Weekly · Spotify</span>
+          <h3>Commercial Synopsis</h3>
+          <p>Every week I pick the biggest stories in business, politics and the economy and explain what happened and why it matters.</p>
+          <p>I started the show to keep up with the commercial world beyond healthcare, especially life sciences, and to sharpen how I explain complex topics.</p>
+          <div class="links" style="margin-top:8px"><a class="btn" href="https://open.spotify.com/show/4LJJU349OM7sP6eChqVRIF" target="_blank" rel="noopener"><svg class="sprite" width="24" height="28" viewBox="0 0 12 14" aria-hidden="true" focusable="false"><rect x="4" y="0" width="4" height="1" style="fill:var(--text)"/><rect x="3" y="1" width="1" height="1" style="fill:var(--text)"/><rect x="4" y="1" width="1" height="1" style="fill:#9aa4b2"/><rect x="5" y="1" width="1" height="1" style="fill:#d6dce6"/><rect x="6" y="1" width="1" height="1" style="fill:#ffffff"/><rect x="7" y="1" width="1" height="1" style="fill:#9aa4b2"/><rect x="8" y="1" width="1" height="1" style="fill:var(--text)"/><rect x="3" y="2" width="1" height="1" style="fill:var(--text)"/><rect x="4" y="2" width="4" height="1" style="fill:#9aa4b2"/><rect x="8" y="2" width="1" height="1" style="fill:var(--text)"/><rect x="3" y="3" width="1" height="1" style="fill:var(--text)"/><rect x="4" y="3" width="1" height="1" style="fill:#d6dce6"/><rect x="5" y="3" width="1" height="1" style="fill:#9aa4b2"/><rect x="6" y="3" width="1" height="1" style="fill:#d6dce6"/><rect x="7" y="3" width="1" height="1" style="fill:#9aa4b2"/><rect x="8" y="3" width="1" height="1" style="fill:var(--text)"/><rect x="3" y="4" width="1" height="1" style="fill:var(--text)"/><rect x="4" y="4" width="4" height="1" style="fill:#9aa4b2"/><rect x="8" y="4" width="1" height="1" style="fill:var(--text)"/><rect x="3" y="5" width="1" height="1" style="fill:var(--text)"/><rect x="4" y="5" width="1" height="1" style="fill:#9aa4b2"/><rect x="5" y="5" width="1" height="1" style="fill:#d6dce6"/><rect x="6" y="5" width="1" height="1" style="fill:#9aa4b2"/><rect x="7" y="5" width="1" height="1" style="fill:#d6dce6"/><rect x="8" y="5" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="6" width="1" height="1" style="fill:var(--text)"/><rect x="3" y="6" width="1" height="1" style="fill:var(--text)"/><rect x="4" y="6" width="4" height="1" style="fill:#9aa4b2"/><rect x="8" y="6" width="1" height="1" style="fill:var(--text)"/><rect x="10" y="6" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="7" width="1" height="1" style="fill:var(--text)"/><rect x="4" y="7" width="4" height="1" style="fill:var(--text)"/><rect x="10" y="7" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="8" width="2" height="1" style="fill:var(--text)"/><rect x="9" y="8" width="2" height="1" style="fill:var(--text)"/><rect x="2" y="9" width="2" height="1" style="fill:var(--text)"/><rect x="8" y="9" width="2" height="1" style="fill:var(--text)"/><rect x="4" y="10" width="4" height="1" style="fill:var(--text)"/><rect x="5" y="11" width="2" height="1" style="fill:var(--text)"/><rect x="5" y="12" width="2" height="1" style="fill:var(--text)"/><rect x="3" y="13" width="6" height="1" style="fill:var(--text)"/></svg>Open in Spotify</a></div>
+        </div>
       </div>
-      <iframe title="Commercial Synopsis on Spotify" src="https://open.spotify.com/embed/show/4LJJU349OM7sP6eChqVRIF" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+      <div class="win player">
+        <div class="titlebar"><span class="box"></span><span class="title">NOW PLAYING</span><span class="box"></span></div>
+        <div class="win-body">
+          <iframe title="Commercial Synopsis on Spotify" src="https://open.spotify.com/embed/show/4LJJU349OM7sP6eChqVRIF" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+        </div>
+      </div>
     </div>
   </section>
 
   <section id="cv">
-    <h2>CV</h2>
+    <h2><svg class="sprite" width="56" height="56" viewBox="0 0 14 14" aria-hidden="true" focusable="false"><rect x="0" y="0" width="13" height="1" style="fill:var(--text)"/><rect x="0" y="1" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="1" width="2" height="1" style="fill:#0a84ff"/><rect x="3" y="1" width="1" height="1" style="fill:var(--text)"/><rect x="4" y="1" width="5" height="1" style="fill:#d6dce6"/><rect x="9" y="1" width="1" height="1" style="fill:var(--text)"/><rect x="10" y="1" width="3" height="1" style="fill:#0a84ff"/><rect x="13" y="1" width="1" height="1" style="fill:var(--text)"/><rect x="0" y="2" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="2" width="2" height="1" style="fill:#0a84ff"/><rect x="3" y="2" width="1" height="1" style="fill:var(--text)"/><rect x="4" y="2" width="3" height="1" style="fill:#d6dce6"/><rect x="7" y="2" width="1" height="1" style="fill:var(--text)"/><rect x="8" y="2" width="1" height="1" style="fill:#d6dce6"/><rect x="9" y="2" width="1" height="1" style="fill:var(--text)"/><rect x="10" y="2" width="3" height="1" style="fill:#0a84ff"/><rect x="13" y="2" width="1" height="1" style="fill:var(--text)"/><rect x="0" y="3" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="3" width="2" height="1" style="fill:#0a84ff"/><rect x="3" y="3" width="1" height="1" style="fill:var(--text)"/><rect x="4" y="3" width="3" height="1" style="fill:#d6dce6"/><rect x="7" y="3" width="1" height="1" style="fill:var(--text)"/><rect x="8" y="3" width="1" height="1" style="fill:#d6dce6"/><rect x="9" y="3" width="1" height="1" style="fill:var(--text)"/><rect x="10" y="3" width="3" height="1" style="fill:#0a84ff"/><rect x="13" y="3" width="1" height="1" style="fill:var(--text)"/><rect x="0" y="4" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="4" width="2" height="1" style="fill:#0a84ff"/><rect x="3" y="4" width="7" height="1" style="fill:var(--text)"/><rect x="10" y="4" width="3" height="1" style="fill:#0a84ff"/><rect x="13" y="4" width="1" height="1" style="fill:var(--text)"/><rect x="0" y="5" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="5" width="12" height="1" style="fill:#0a84ff"/><rect x="13" y="5" width="1" height="1" style="fill:var(--text)"/><rect x="0" y="6" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="6" width="12" height="1" style="fill:#0a84ff"/><rect x="13" y="6" width="1" height="1" style="fill:var(--text)"/><rect x="0" y="7" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="7" width="1" height="1" style="fill:#0a84ff"/><rect x="2" y="7" width="10" height="1" style="fill:#ffffff"/><rect x="12" y="7" width="1" height="1" style="fill:#0a84ff"/><rect x="13" y="7" width="1" height="1" style="fill:var(--text)"/><rect x="0" y="8" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="8" width="1" height="1" style="fill:#0a84ff"/><rect x="2" y="8" width="1" height="1" style="fill:#ffffff"/><rect x="3" y="8" width="8" height="1" style="fill:var(--text)"/><rect x="11" y="8" width="1" height="1" style="fill:#ffffff"/><rect x="12" y="8" width="1" height="1" style="fill:#0a84ff"/><rect x="13" y="8" width="1" height="1" style="fill:var(--text)"/><rect x="0" y="9" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="9" width="1" height="1" style="fill:#0a84ff"/><rect x="2" y="9" width="10" height="1" style="fill:#ffffff"/><rect x="12" y="9" width="1" height="1" style="fill:#0a84ff"/><rect x="13" y="9" width="1" height="1" style="fill:var(--text)"/><rect x="0" y="10" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="10" width="1" height="1" style="fill:#0a84ff"/><rect x="2" y="10" width="1" height="1" style="fill:#ffffff"/><rect x="3" y="10" width="6" height="1" style="fill:var(--text)"/><rect x="9" y="10" width="3" height="1" style="fill:#ffffff"/><rect x="12" y="10" width="1" height="1" style="fill:#0a84ff"/><rect x="13" y="10" width="1" height="1" style="fill:var(--text)"/><rect x="0" y="11" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="11" width="1" height="1" style="fill:#0a84ff"/><rect x="2" y="11" width="10" height="1" style="fill:#ffffff"/><rect x="12" y="11" width="1" height="1" style="fill:#0a84ff"/><rect x="13" y="11" width="1" height="1" style="fill:var(--text)"/><rect x="0" y="12" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="12" width="1" height="1" style="fill:#0057c2"/><rect x="2" y="12" width="10" height="1" style="fill:#ffffff"/><rect x="12" y="12" width="1" height="1" style="fill:#0057c2"/><rect x="13" y="12" width="1" height="1" style="fill:var(--text)"/><rect x="0" y="13" width="14" height="1" style="fill:var(--text)"/></svg>CV</h2>
     <div class="cv-cols">
-      <div>
-        <h3 style="margin-bottom:8px">Experience</h3>
-        <ul class="timeline">
-          <li>
-            <span class="when">Mar 2024 – now</span>
-            <div>
-              <h3>Primary Care Network Clinical Pharmacist</h3>
-              <p class="org">Northamptonshire Healthcare NHS Foundation Trust</p>
-              <p>I work across several GP surgeries, doing structured medication reviews and running hypertension, lipid and heart failure clinics. I apply NICE and MHRA guidance, support QOF targets and safety work on high-risk medicines, and supervise a trainee pharmacy technician. I use AI tools such as Accurx and Heidi in practice.</p>
-            </div>
-          </li>
-          <li>
-            <span class="when">Jun – Jul 2025</span>
-            <div>
-              <h3>Legal Intern</h3>
-              <p class="org">AstraZeneca / Eversheds Sutherland · Aspiring Solicitors</p>
-              <p>Co-presented to solicitors and partners on how life sciences legal teams are adapting to AI tools, mRNA and gene therapies.</p>
-            </div>
-          </li>
-          <li>
-            <span class="when">Aug 2023 – Feb 2024</span>
-            <div>
-              <h3>Rotational Clinical Pharmacist</h3>
-              <p class="org">Milton Keynes University Hospital</p>
-              <p>Delivered clinical pharmacy on the cardiology unit and covered week-long on-call periods as the sole contact for urgent medicines queries.</p>
-            </div>
-          </li>
-          <li>
-            <span class="when">Aug 2022 – Jul 2023</span>
-            <div>
-              <h3>Multi-Sector Trainee Pharmacist</h3>
-              <p class="org">Betsi Cadwaladr University Health Board, NHS Wales</p>
-              <p>Trained across community, primary and secondary care. A GP audit I led found a medication switch worth £1,032.85 a month in savings, and I helped five patients stop smoking in four months.</p>
-            </div>
-          </li>
-          <li>
-            <span class="when">Jul 2021</span>
-            <div>
-              <h3>Research Assistant</h3>
-              <p class="org">Keele University</p>
-              <p>Chemoinformatics research under Dr Jóhannes Reynisson FRSC: I built a dataset of drug plasma half-lives and analysed how they relate to molecular descriptors.</p>
-            </div>
-          </li>
-        </ul>
+      <div class="win">
+        <div class="titlebar"><span class="box"></span><span class="title">EXPERIENCE.DOC</span><span class="box"></span></div>
+        <div class="win-body">
+          <ul class="timeline">
+            <li>
+              <span class="when">Mar 2024 – now</span>
+              <div>
+                <h3>Primary Care Network Clinical Pharmacist</h3>
+                <p class="org">Northamptonshire Healthcare NHS Foundation Trust</p>
+                <p>I work across several GP surgeries, doing structured medication reviews and running hypertension, lipid and heart failure clinics. I apply NICE and MHRA guidance, support QOF targets and safety work on high-risk medicines, and supervise a trainee pharmacy technician. I use AI tools such as Accurx and Heidi in practice.</p>
+              </div>
+            </li>
+            <li>
+              <span class="when">Jun – Jul 2025</span>
+              <div>
+                <h3>Legal Intern</h3>
+                <p class="org">AstraZeneca / Eversheds Sutherland · Aspiring Solicitors</p>
+                <p>Co-presented to solicitors and partners on how life sciences legal teams are adapting to AI tools, mRNA and gene therapies.</p>
+              </div>
+            </li>
+            <li>
+              <span class="when">Aug 2023 – Feb 2024</span>
+              <div>
+                <h3>Rotational Clinical Pharmacist</h3>
+                <p class="org">Milton Keynes University Hospital</p>
+                <p>Delivered clinical pharmacy on the cardiology unit and covered week-long on-call periods as the sole contact for urgent medicines queries.</p>
+              </div>
+            </li>
+            <li>
+              <span class="when">Aug 2022 – Jul 2023</span>
+              <div>
+                <h3>Multi-Sector Trainee Pharmacist</h3>
+                <p class="org">Betsi Cadwaladr University Health Board, NHS Wales</p>
+                <p>Trained across community, primary and secondary care. A GP audit I led found a medication switch worth £1,032.85 a month in savings, and I helped five patients stop smoking in four months.</p>
+              </div>
+            </li>
+            <li>
+              <span class="when">Jul 2021</span>
+              <div>
+                <h3>Research Assistant</h3>
+                <p class="org">Keele University</p>
+                <p>Chemoinformatics research under Dr Jóhannes Reynisson FRSC: I built a dataset of drug plasma half-lives and analysed how they relate to molecular descriptors.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
       </div>
-      <div>
-        <h3 style="margin-bottom:8px">Education &amp; registration</h3>
-        <ul class="timeline">
-          <li>
-            <span class="when">MPharm</span>
-            <div>
-              <h3>Master of Pharmacy, First-Class Honours</h3>
-              <p class="org">Keele University</p>
-              <p>Undergraduate research on machine learning to predict how well drugs penetrate the skin.</p>
-            </div>
-          </li>
-          <li>
-            <span class="when">Postgraduate</span>
-            <div>
-              <h3>Primary Care Pharmacy Education Pathway</h3>
-              <p class="org">CPPE</p>
-            </div>
-          </li>
-          <li>
-            <span class="when">Registration</span>
-            <div>
-              <h3>Registered Pharmacist</h3>
-              <p class="org">General Pharmaceutical Council (GPhC) · 2233821</p>
-            </div>
-          </li>
-        </ul>
-        <h3 style="margin:24px 0 12px">Skills</h3>
-        <div class="chips">
-          <span>Structured medication reviews</span>
-          <span>Hypertension &amp; cardiovascular care</span>
-          <span>NICE &amp; MHRA guidance</span>
-          <span>Medicines optimisation</span>
-          <span>Clinical audit</span>
-          <span>AI tools in practice</span>
-          <span>Swift / SwiftUI</span>
-          <span>Kotlin</span>
-          <span>Mobile app development</span>
-          <span>Podcasting</span>
+
+      <div class="side">
+        <div class="win">
+          <div class="titlebar"><span class="box"></span><span class="title">EDUCATION.DOC</span><span class="box"></span></div>
+          <div class="win-body">
+            <ul class="timeline">
+              <li>
+                <span class="when">MPharm</span>
+                <div>
+                  <h3>Master of Pharmacy, First-Class Honours</h3>
+                  <p class="org">Keele University</p>
+                  <p>Undergraduate research on machine learning to predict how well drugs penetrate the skin.</p>
+                </div>
+              </li>
+              <li>
+                <span class="when">Postgrad</span>
+                <div>
+                  <h3>Primary Care Pharmacy Education Pathway</h3>
+                  <p class="org">CPPE</p>
+                </div>
+              </li>
+              <li>
+                <span class="when">Registered</span>
+                <div>
+                  <h3>Pharmacist</h3>
+                  <p class="org">General Pharmaceutical Council (GPhC) · 2233821</p>
+                </div>
+              </li>
+            </ul>
+          </div>
         </div>
-        <h3 style="margin:24px 0 12px">Languages</h3>
-        <div class="chips">
-          <span>English (native)</span>
-          <span>Shona (native)</span>
-        </div>
-        <h3 style="margin:24px 0 12px">Outside work</h3>
-        <div class="chips">
-          <span>Golf</span>
-          <span>Swimming</span>
-          <span>Bouldering</span>
-          <span>Formula 1</span>
-          <span>Reading</span>
+
+        <div class="win">
+          <div class="titlebar"><span class="box"></span><span class="title">SKILLS.SYS</span><span class="box"></span></div>
+          <div class="win-body">
+            <div class="chips">
+              <span>Structured medication reviews</span>
+              <span>Hypertension &amp; cardiovascular care</span>
+              <span>NICE &amp; MHRA guidance</span>
+              <span>Medicines optimisation</span>
+              <span>Clinical audit</span>
+              <span>AI tools in practice</span>
+              <span>Swift / SwiftUI</span>
+              <span>Kotlin</span>
+              <span>Mobile app development</span>
+              <span>Podcasting</span>
+            </div>
+            <p class="label">Languages</p>
+            <div class="chips"><span>English (native)</span><span>Shona (native)</span></div>
+            <p class="label">Outside work</p>
+            <div class="chips"><span>Golf</span><span>Swimming</span><span>Bouldering</span><span>Formula 1</span><span>Reading</span></div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <section id="contact">
-    <h2>Get in touch</h2>
-    <p>Open to digital health projects, collaborations and guest spots on the podcast. Based in Milton Keynes, UK.</p>
-    <div class="buttons">
-      <a class="btn" href="mailto:rukashatinashe12@gmail.com">Email me</a>
-      <a class="btn ghost" href="https://www.linkedin.com/in/tinashe-rodney-r-045826149/" target="_blank" rel="noopener">LinkedIn</a>
-      <a class="btn ghost" href="https://github.com/ruktin-eng">GitHub</a>
+    <h2><svg class="sprite" width="64" height="40" viewBox="0 0 16 10" aria-hidden="true" focusable="false"><rect x="0" y="0" width="16" height="1" style="fill:var(--text)"/><rect x="0" y="1" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="1" width="1" height="1" style="fill:#0a84ff"/><rect x="2" y="1" width="1" height="1" style="fill:var(--text)"/><rect x="3" y="1" width="10" height="1" style="fill:#ffffff"/><rect x="13" y="1" width="1" height="1" style="fill:var(--text)"/><rect x="14" y="1" width="1" height="1" style="fill:#0a84ff"/><rect x="15" y="1" width="1" height="1" style="fill:var(--text)"/><rect x="0" y="2" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="2" width="1" height="1" style="fill:#ffffff"/><rect x="2" y="2" width="1" height="1" style="fill:#0a84ff"/><rect x="3" y="2" width="1" height="1" style="fill:var(--text)"/><rect x="4" y="2" width="8" height="1" style="fill:#ffffff"/><rect x="12" y="2" width="1" height="1" style="fill:var(--text)"/><rect x="13" y="2" width="1" height="1" style="fill:#0a84ff"/><rect x="14" y="2" width="1" height="1" style="fill:#ffffff"/><rect x="15" y="2" width="1" height="1" style="fill:var(--text)"/><rect x="0" y="3" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="3" width="2" height="1" style="fill:#ffffff"/><rect x="3" y="3" width="1" height="1" style="fill:#0a84ff"/><rect x="4" y="3" width="1" height="1" style="fill:var(--text)"/><rect x="5" y="3" width="6" height="1" style="fill:#ffffff"/><rect x="11" y="3" width="1" height="1" style="fill:var(--text)"/><rect x="12" y="3" width="1" height="1" style="fill:#0a84ff"/><rect x="13" y="3" width="2" height="1" style="fill:#ffffff"/><rect x="15" y="3" width="1" height="1" style="fill:var(--text)"/><rect x="0" y="4" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="4" width="3" height="1" style="fill:#ffffff"/><rect x="4" y="4" width="1" height="1" style="fill:#0a84ff"/><rect x="5" y="4" width="1" height="1" style="fill:var(--text)"/><rect x="6" y="4" width="4" height="1" style="fill:#ffffff"/><rect x="10" y="4" width="1" height="1" style="fill:var(--text)"/><rect x="11" y="4" width="1" height="1" style="fill:#0a84ff"/><rect x="12" y="4" width="3" height="1" style="fill:#ffffff"/><rect x="15" y="4" width="1" height="1" style="fill:var(--text)"/><rect x="0" y="5" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="5" width="4" height="1" style="fill:#ffffff"/><rect x="5" y="5" width="1" height="1" style="fill:#0a84ff"/><rect x="6" y="5" width="4" height="1" style="fill:var(--text)"/><rect x="10" y="5" width="1" height="1" style="fill:#0a84ff"/><rect x="11" y="5" width="4" height="1" style="fill:#ffffff"/><rect x="15" y="5" width="1" height="1" style="fill:var(--text)"/><rect x="0" y="6" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="6" width="5" height="1" style="fill:#ffffff"/><rect x="6" y="6" width="4" height="1" style="fill:#0a84ff"/><rect x="10" y="6" width="5" height="1" style="fill:#ffffff"/><rect x="15" y="6" width="1" height="1" style="fill:var(--text)"/><rect x="0" y="7" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="7" width="14" height="1" style="fill:#ffffff"/><rect x="15" y="7" width="1" height="1" style="fill:var(--text)"/><rect x="0" y="8" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="8" width="14" height="1" style="fill:#ffffff"/><rect x="15" y="8" width="1" height="1" style="fill:var(--text)"/><rect x="0" y="9" width="16" height="1" style="fill:var(--text)"/></svg>Contact</h2>
+    <div class="win contact">
+      <div class="titlebar"><span class="box"></span><span class="title">SAY HELLO</span><span class="box"></span></div>
+      <div class="win-body">
+        <p>Open to digital health projects, collaborations and guest spots on the podcast. Based in Milton Keynes, UK.</p>
+        <div class="buttons">
+          <a class="btn" href="mailto:rukashatinashe12@gmail.com"><svg class="sprite" width="32" height="20" viewBox="0 0 16 10" aria-hidden="true" focusable="false"><rect x="0" y="0" width="16" height="1" style="fill:var(--text)"/><rect x="0" y="1" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="1" width="1" height="1" style="fill:#0a84ff"/><rect x="2" y="1" width="1" height="1" style="fill:var(--text)"/><rect x="3" y="1" width="10" height="1" style="fill:#ffffff"/><rect x="13" y="1" width="1" height="1" style="fill:var(--text)"/><rect x="14" y="1" width="1" height="1" style="fill:#0a84ff"/><rect x="15" y="1" width="1" height="1" style="fill:var(--text)"/><rect x="0" y="2" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="2" width="1" height="1" style="fill:#ffffff"/><rect x="2" y="2" width="1" height="1" style="fill:#0a84ff"/><rect x="3" y="2" width="1" height="1" style="fill:var(--text)"/><rect x="4" y="2" width="8" height="1" style="fill:#ffffff"/><rect x="12" y="2" width="1" height="1" style="fill:var(--text)"/><rect x="13" y="2" width="1" height="1" style="fill:#0a84ff"/><rect x="14" y="2" width="1" height="1" style="fill:#ffffff"/><rect x="15" y="2" width="1" height="1" style="fill:var(--text)"/><rect x="0" y="3" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="3" width="2" height="1" style="fill:#ffffff"/><rect x="3" y="3" width="1" height="1" style="fill:#0a84ff"/><rect x="4" y="3" width="1" height="1" style="fill:var(--text)"/><rect x="5" y="3" width="6" height="1" style="fill:#ffffff"/><rect x="11" y="3" width="1" height="1" style="fill:var(--text)"/><rect x="12" y="3" width="1" height="1" style="fill:#0a84ff"/><rect x="13" y="3" width="2" height="1" style="fill:#ffffff"/><rect x="15" y="3" width="1" height="1" style="fill:var(--text)"/><rect x="0" y="4" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="4" width="3" height="1" style="fill:#ffffff"/><rect x="4" y="4" width="1" height="1" style="fill:#0a84ff"/><rect x="5" y="4" width="1" height="1" style="fill:var(--text)"/><rect x="6" y="4" width="4" height="1" style="fill:#ffffff"/><rect x="10" y="4" width="1" height="1" style="fill:var(--text)"/><rect x="11" y="4" width="1" height="1" style="fill:#0a84ff"/><rect x="12" y="4" width="3" height="1" style="fill:#ffffff"/><rect x="15" y="4" width="1" height="1" style="fill:var(--text)"/><rect x="0" y="5" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="5" width="4" height="1" style="fill:#ffffff"/><rect x="5" y="5" width="1" height="1" style="fill:#0a84ff"/><rect x="6" y="5" width="4" height="1" style="fill:var(--text)"/><rect x="10" y="5" width="1" height="1" style="fill:#0a84ff"/><rect x="11" y="5" width="4" height="1" style="fill:#ffffff"/><rect x="15" y="5" width="1" height="1" style="fill:var(--text)"/><rect x="0" y="6" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="6" width="5" height="1" style="fill:#ffffff"/><rect x="6" y="6" width="4" height="1" style="fill:#0a84ff"/><rect x="10" y="6" width="5" height="1" style="fill:#ffffff"/><rect x="15" y="6" width="1" height="1" style="fill:var(--text)"/><rect x="0" y="7" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="7" width="14" height="1" style="fill:#ffffff"/><rect x="15" y="7" width="1" height="1" style="fill:var(--text)"/><rect x="0" y="8" width="1" height="1" style="fill:var(--text)"/><rect x="1" y="8" width="14" height="1" style="fill:#ffffff"/><rect x="15" y="8" width="1" height="1" style="fill:var(--text)"/><rect x="0" y="9" width="16" height="1" style="fill:var(--text)"/></svg>Email me</a>
+          <a class="btn ghost" href="https://www.linkedin.com/in/tinashe-rodney-r-045826149/" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn ghost" href="https://github.com/ruktin-eng">GitHub</a>
+        </div>
+      </div>
     </div>
   </section>
 
 </main>
 
 <footer>
-  <div class="wrap">© 2026 Tinashe Rukasha</div>
+  <div class="wrap"><span>© 2026 Tinashe Rukasha</span><span>Best viewed in any browser</span></div>
 </footer>
 
 </body>
